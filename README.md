@@ -1,5 +1,9 @@
 # Zeta Explained Course Notes
 
+[![Deploy Jupyter Book](https://github.com/nyx7zen/zeta_explained_notes/actions/workflows/deploy.yml/badge.svg)](https://github.com/nyx7zen/zeta_explained_notes/actions/workflows/deploy.yml)
+
+배포 주소: https://nyx7zen.github.io/zeta_explained_notes/
+
 YouTube 재생목록의 리만 제타 함수 강의를 정리한 개인 학습 노트.
 
 - **Playlist**: [Zeta Explained](https://youtube.com/playlist?list=PLTcPERDxgHxm7TzJ9W92S-l5pGRuhZz10)

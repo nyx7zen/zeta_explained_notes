@@ -10,6 +10,8 @@ parts:
     # numbered : true
     chapters :
       - file  : contents/lec-001/lec-001_notes
+        sections:
+        - file: contents/lec-001/lec-001_fig_01
       # - file: contents/lec-002/lec-002_notes
       # - file: contents/lec-003/lec-003_notes
       # - file: contents/lec-004/lec-004_notes
