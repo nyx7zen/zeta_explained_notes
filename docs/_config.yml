@@ -1,0 +1,77 @@
+# ============================================================
+# Jupyter Book V1 Configuration
+# ============================================================
+
+title     : Zeta Explained Course Notes
+author    : USERNAME
+copyright : "2026"
+logo      : ""
+
+# ============================================================
+# 빌드 설정
+# ============================================================
+only_build_toc_files: true
+
+# ============================================================
+# 실행 설정
+# ============================================================
+execute:
+  execute_notebooks : off
+  timeout           : 60
+
+# ============================================================
+# 파싱 설정 (MyST)
+# ============================================================
+parse:
+  myst_enable_extensions:
+    - amsmath
+    - dollarmath
+    - colon_fence
+
+# ============================================================
+# Sphinx 설정
+# ============================================================
+sphinx:
+  config:
+    # MathJax 3 사용 (기본은 MathJax 2)
+    mathjax_path: https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+    # MathJax 3 설정
+    mathjax3_config:
+      tex:
+        tags    : "ams"          # equation 환경 자동 넘버링
+        tagSide : "right"
+        macros  :
+          "Re"  : "\\operatorname{Re}"
+          "Im"  : "\\operatorname{Im}"
+  extra_extensions: []
+    # - sphinx_proof
+
+# ============================================================
+# HTML 출력 설정
+# ============================================================
+html:
+  use_repository_button : true
+  use_download_button   : true
+  use_fullscreen_button : true
+  home_page_in_navbar   : true
+
+# ============================================================
+# 저장소 설정
+# ============================================================
+repository:
+  url          : https://github.com/USERNAME/zeta_explained_notes
+  path_to_book : docs
+  branch       : main
+
+# ============================================================
+# 참고문헌
+# ============================================================
+bibtex_bibfiles:
+  - references.bib
+
+# ============================================================
+# LaTeX 설정
+# ============================================================
+latex:
+  latex_engine          : pdflatex
+  use_jupyterbook_latex : true

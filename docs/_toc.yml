@@ -1,0 +1,89 @@
+# ============================================================
+# Table of Contents
+# ============================================================
+
+format: jb-book
+root  : contents/index
+
+parts:
+  - caption  : Lecture Notes
+    # numbered : true
+    chapters :
+      - file  : contents/lec-001/lec-001_notes
+      # - file: contents/lec-002/lec-002_notes
+      # - file: contents/lec-003/lec-003_notes
+      # - file: contents/lec-004/lec-004_notes
+      # - file: contents/lec-005/lec-005_notes
+      # - file: contents/lec-006/lec-006_notes
+      # - file: contents/lec-007/lec-007_notes
+      # - file: contents/lec-008/lec-008_notes
+      # - file: contents/lec-009/lec-009_notes
+      # - file: contents/lec-010/lec-010_notes
+      # - file: contents/lec-011/lec-011_notes
+      # - file: contents/lec-012/lec-012_notes
+      # - file: contents/lec-013/lec-013_notes
+      # - file: contents/lec-014/lec-014_notes
+      # - file: contents/lec-015/lec-015_notes
+      # - file: contents/lec-016/lec-016_notes
+      # - file: contents/lec-017/lec-017_notes
+      # - file: contents/lec-018/lec-018_notes
+      # - file: contents/lec-019/lec-019_notes
+      # - file: contents/lec-020/lec-020_notes
+      # - file: contents/lec-021/lec-021_notes
+      # - file: contents/lec-022/lec-022_notes
+      # - file: contents/lec-023/lec-023_notes
+      # - file: contents/lec-024/lec-024_notes
+      # - file: contents/lec-025/lec-025_notes
+      # - file: contents/lec-026/lec-026_notes
+      # - file: contents/lec-027/lec-027_notes
+      # - file: contents/lec-028/lec-028_notes
+      # - file: contents/lec-029/lec-029_notes
+      # - file: contents/lec-030/lec-030_notes
+      # - file: contents/lec-031/lec-031_notes
+      # - file: contents/lec-032/lec-032_notes
+      # - file: contents/lec-033/lec-033_notes
+      # - file: contents/lec-034/lec-034_notes
+      # - file: contents/lec-035/lec-035_notes
+      # - file: contents/lec-036/lec-036_notes
+      # - file: contents/lec-037/lec-037_notes
+      # - file: contents/lec-038/lec-038_notes
+      # - file: contents/lec-039/lec-039_notes
+      # - file: contents/lec-040/lec-040_notes
+      # - file: contents/lec-041/lec-041_notes
+      # - file: contents/lec-042/lec-042_notes
+      # - file: contents/lec-043/lec-043_notes
+      # - file: contents/lec-044/lec-044_notes
+      # - file: contents/lec-045/lec-045_notes
+      # - file: contents/lec-046/lec-046_notes
+      # - file: contents/lec-047/lec-047_notes
+      # - file: contents/lec-048/lec-048_notes
+      # - file: contents/lec-049/lec-049_notes
+      # - file: contents/lec-050/lec-050_notes
+      # - file: contents/lec-051/lec-051_notes
+      # - file: contents/lec-052/lec-052_notes
+      # - file: contents/lec-053/lec-053_notes
+      # - file: contents/lec-054/lec-054_notes
+      # - file: contents/lec-055/lec-055_notes
+      # - file: contents/lec-056/lec-056_notes
+      # - file: contents/lec-057/lec-057_notes
+      # - file: contents/lec-058/lec-058_notes
+      # - file: contents/lec-059/lec-059_notes
+      # - file: contents/lec-060/lec-060_notes
+      # - file: contents/lec-061/lec-061_notes
+      # - file: contents/lec-062/lec-062_notes
+      # - file: contents/lec-063/lec-063_notes
+      # - file: contents/lec-064/lec-064_notes
+      # - file: contents/lec-065/lec-065_notes
+      # - file: contents/lec-066/lec-066_notes
+      # - file: contents/lec-067/lec-067_notes
+      # - file: contents/lec-068/lec-068_notes
+      # - file: contents/lec-069/lec-069_notes
+      # - file: contents/lec-070/lec-070_notes
+      # - file: contents/lec-071/lec-071_notes
+      # - file: contents/lec-072/lec-072_notes
+      # - file: contents/lec-073/lec-073_notes
+      # - file: contents/lec-074/lec-074_notes
+      # - file: contents/lec-075/lec-075_notes
+      # - file: contents/lec-076/lec-076_notes
+      # - file: contents/lec-077/lec-077_notes
+      # - file: contents/lec-078/lec-078_notes

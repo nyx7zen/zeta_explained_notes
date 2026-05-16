@@ -1,0 +1,56 @@
+/* ============================================================
+   Zeta Explained Course Notes — Custom Styles
+   ============================================================ */
+
+/* 수식 폰트 크기 */
+.math {
+    font-size: 1.05em;
+}
+
+/* equation 넘버링 여백 */
+.MathJax_Display {
+    margin: 1.2em 0;
+}
+
+/* 코드 블록 폰트 */
+pre, code {
+    font-family: "JetBrains Mono", "Fira Code", "Consolas", monospace;
+    font-size: 0.92em;
+}
+
+/* 인용 블록 (주의 사항) */
+blockquote {
+    border-left   : 4px solid #e67e22;
+    background    : #fef9f0;
+    padding       : 0.6em 1em;
+    margin        : 1em 0;
+    border-radius : 0 4px 4px 0;
+}
+
+blockquote p {
+    margin : 0;
+    color  : #7d4e1a;
+}
+
+/* Summary 섹션 불릿 */
+.content ul li {
+    margin-bottom : 0.4em;
+    line-height   : 1.7;
+}
+
+/* Review Questions 번호 리스트 */
+.content ol li {
+    margin-bottom : 0.4em;
+    line-height   : 1.7;
+}
+
+/* 테이블 헤더 */
+table thead th {
+    background-color : #f0f4f8;
+    font-weight      : 600;
+}
+
+/* 테이블 홀수 행 */
+table tbody tr:nth-child(odd) {
+    background-color : #f8fafc;
+}

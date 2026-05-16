@@ -1,0 +1,34 @@
+name: Deploy Jupyter Book
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install dependencies
+        run: |
+          pip install jupyter-book==1.0.4
+          pip install sphinx-proof
+          pip install ghp-import
+          pip install -e .
+
+      - name: Build
+        run: jupyter-book build docs/
+
+      - name: Deploy
+        run: ghp-import -n -p -f docs/_build/html
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
