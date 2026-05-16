@@ -3,7 +3,7 @@
 # ============================================================
 
 title     : Zeta Explained Course Notes
-author    : USERNAME
+author    : nyx7zen
 copyright : "2026"
 logo      : ""
 
@@ -59,7 +59,7 @@ html:
 # 저장소 설정
 # ============================================================
 repository:
-  url          : https://github.com/USERNAME/zeta_explained_notes
+  url          : https://github.com/nyx7zen/zeta_explained_notes
   path_to_book : docs
   branch       : main
 
