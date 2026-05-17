@@ -1,4 +1,4 @@
-# Zeta Explained Course Notes
+# Introduction
 
 Riemann zeta function의 수학적 구조를 단계별로 학습하는 개인 학습 노트이다.
 
