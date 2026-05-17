@@ -145,6 +145,11 @@ complex numbers에 대한 기본 지식을 갖추고 있다고 가정하며, com
 - **설명**은 한국어로 작성한다.
 - **사람 이름, 정리 이름, 수학 용어**는 영어 표기를 유지한다.
   - 예: Riemann hypothesis, Weierstrass Factorization Theorem, Euler-Maclaurin summation
+- **수학 용어의 한국어(영어) 병기는 사용하지 않는다.**
+  처음 등장하는 수학 용어라도 영어 단독 표기를 원칙으로 한다.
+  - 잘못된 예: 적분 판정법(integral test), 삼각 부등식(triangle inequality),
+    절대수렴(absolutely convergent), 단위원(unit circle)
+  - 올바른 예: integral test, triangle inequality, absolutely convergent, unit circle
 
 ### 문체
 
@@ -163,6 +168,18 @@ complex numbers에 대한 기본 지식을 갖추고 있다고 가정하며, com
 
 - `$...$` 형식을 사용한다.
 - `\(...\)` 형식은 사용하지 않는다.
+- Inline 수식은 반드시 한 줄에 작성한다. `$...$` 수식 내부에서 줄바꿈(개행)을
+  허용하지 않는다. 수식이 길어 줄바꿈이 불가피한 경우, 수식 이후의 텍스트에서
+  줄바꿈한다.
+  - 잘못된 예:
+```
+$|\zeta(\sigma + it)| \leq
+\zeta(\sigma)$가 성립함을 보인다.
+```
+  - 올바른 예:
+```
+$|\zeta(\sigma + it)| \leq \zeta(\sigma)$가 성립함을 보인다.
+```
 
 ### Display 수식 — 3가지 환경 구분
 

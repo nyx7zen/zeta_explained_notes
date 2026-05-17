@@ -54,3 +54,16 @@ table thead th {
 table tbody tr:nth-child(odd) {
     background-color : #f8fafc;
 }
+
+/* 이미지 중앙 정렬 */
+img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* 이미지 캡션 제목만 중앙 정렬, 설명 텍스트는 좌측 유지 */
+/* img를 포함한 p 태그 이후 첫 번째 p 태그 중앙 정렬 */
+p:has(img) + p {
+    text-align: center;
+}
