@@ -1,0 +1,15 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(git pull *)",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git push *)",
+      "Bash(mv \"d:/projects/nyx7zen/zeta_explained_notes/docs/contents/index.md\" \"d:/projects/nyx7zen/zeta_explained_notes/docs/intro.md\")",
+      "Bash(jupyter-book build *)"
+    ],
+    "additionalDirectories": [
+      "d:\\projects\\nyx7zen\\zeta_explained_notes\\docs\\contents"
+    ]
+  }
+}
