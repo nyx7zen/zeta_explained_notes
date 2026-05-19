@@ -15,8 +15,9 @@ parts:
       - file  : contents/lec-002/lec-002_notes    # lec-002
         sections:
         - file: contents/lec-002/lec-002_figures
-      # - file: contents/lec-002/lec-002_notes
-      # - file: contents/lec-003/lec-003_notes
+      - file  : contents/lec-003/lec-003_notes    # lec-003
+        sections:
+        - file: contents/lec-003/lec-003_figures
       # - file: contents/lec-004/lec-004_notes
       # - file: contents/lec-005/lec-005_notes
       # - file: contents/lec-006/lec-006_notes
