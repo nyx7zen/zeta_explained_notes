@@ -34,7 +34,7 @@ Complex analysis의 일반적인 결과는 증명 없이 인용하고, zeta func
 
 | No. | Title | Notes |
 |----:|-------|-------|
-| 001 | Intro and the Basel Problem | {doc}`lec-001/lec-001_notes` |
+| 001 | Intro and the Basel Problem | {doc}`contents/lec-001/lec-001_notes` |
 | 002 | Zeta in the Complex Plane | |
 | 003 | Analytic Properties of Zeta | |
 | 004 | The Euler Product Formula | |
