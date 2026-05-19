@@ -1,0 +1,842 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="./" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Introduction &#8212; Zeta Explained Course Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="_static/custom.css?v=1b93cdf1" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="_static/doctools.js?v=9a2dae69"></script>
+    <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="_static/copybutton.js?v=f281be69"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "tagSide": "right", "macros": {"Re": "\\operatorname{Re}", "Im": "\\operatorname{Im}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'intro';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="#01 Intro and the Basel Problem" href="contents/lec-001/lec-001_notes.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Zeta Explained Course Notes</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Ch 1. 제타 함수의 기초와 오일러 곱</span></p>
+<ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="contents/lec-001/lec-001_notes.html">1. 서론 및 바젤 문제</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents/lec-001/lec-001_figures.html">Figures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contents/lec-002/lec-002_notes.html">2. 복소평면에서의 제타 함수</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents/lec-002/lec-002_figures.html">Figures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="contents/lec-003/lec-003_notes.html">3. 제타의 해석적 성질</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="contents/lec-003/lec-003_figures.html">Figures</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/nyx7zen/zeta_explained_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="_sources/intro.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Introduction</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-course">About This Course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-list">Lecture List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="introduction">
+<h1>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h1>
+<p>Riemann zeta function의 수학적 구조를 단계별로 학습하는 개인 학습 노트이다.</p>
+<hr class="docutils" />
+<section id="about-this-course">
+<h2>About This Course<a class="headerlink" href="#about-this-course" title="Link to this heading">#</a></h2>
+<p>이 시리즈는 총 78개 강의로 구성된다. Basel problem <span class="math notranslate nohighlight">\(\zeta(2) = \pi^2/6\)</span>의
+증명을 출발점으로 삼아, Riemann zeta function의 수학적 구조를 체계적으로 탐구하며,
+최종적으로 critical strip 내 zeros의 개수를 <span class="math notranslate nohighlight">\(O(T \log T)\)</span>로 추정하는
+Riemann–von Mangoldt equation에 이른다.</p>
+<p>수강자는 calculus와 complex numbers에 대한 기본 지식을 갖추고 있다고 가정한다.
+Complex analysis의 일반적인 결과는 증명 없이 인용하고, zeta function에 직접
+관련된 결과만 상세히 증명하므로, complex analysis를 사전에 학습하지 않아도
+수강이 가능하다.</p>
+<p>주요 주제는 다음과 같다.</p>
+<ul class="simple">
+<li><p>Euler product formula와 analytic continuation</p></li>
+<li><p>Laurent series, functional equation <span class="math notranslate nohighlight">\(\zeta(s) = \zeta(1-s)\)</span></p></li>
+<li><p>Hadamard product formula와 nontrivial zeros의 분포</p></li>
+<li><p>Riemann–von Mangoldt formula</p></li>
+<li><p>Classical zero-free region과 Prime number theorem</p></li>
+<li><p>Riemann–Siegel formula와 Hardy Z-function</p></li>
+<li><p>Dirichlet series, Möbius function, Mertens conjecture</p></li>
+<li><p>Mean value theorems와 omega results</p></li>
+<li><p>Riemann hypothesis와 Lindelöf hypothesis</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="lecture-list">
+<h2>Lecture List<a class="headerlink" href="#lecture-list" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
+<thead>
+<tr class="row-odd"><th class="head text-right"><p>No.</p></th>
+<th class="head"><p>Title</p></th>
+<th class="head"><p>Notes</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-right"><p>001</p></td>
+<td><p>Intro and the Basel Problem</p></td>
+<td><p><a class="reference internal" href="contents/lec-001/lec-001_notes.html"><span class="doc">#01 Intro and the Basel Problem</span></a></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>002</p></td>
+<td><p>Zeta in the Complex Plane</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>003</p></td>
+<td><p>Analytic Properties of Zeta</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>004</p></td>
+<td><p>The Euler Product Formula</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>005</p></td>
+<td><p>Proof that Zeta has No Zeros with Re(s) &gt; 1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>006</p></td>
+<td><p>The Logarithmic Derivative and the Von Mangoldt Function</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>007</p></td>
+<td><p>Intro to Analytic Continuation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>008</p></td>
+<td><p>The Dirichlet Eta Function</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>009</p></td>
+<td><p>Riemann–Stieltjes Integration</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>010</p></td>
+<td><p>Euler–Maclaurin Summation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>011</p></td>
+<td><p>The Laurent Series of the Zeta Function at s=1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>012</p></td>
+<td><p>The Explicit Formula for Zeta at Even Integers</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>013</p></td>
+<td><p>Proof that the Zeta Function Has No Zeros on the Line Re(s) = 1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>014</p></td>
+<td><p>Intro to the Gamma Function</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>015</p></td>
+<td><p>Riemann’s Functional Equation Connects ζ(s) and ζ(1-s)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>016</p></td>
+<td><p>Proof of Riemann’s Functional Equation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>017</p></td>
+<td><p>Riemann’s Xi Function</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>018</p></td>
+<td><p>Growth Rates of Complex Functions</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>019</p></td>
+<td><p>Proof that the Number of Zeros in the Critical Strip Is O(T log T)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>020</p></td>
+<td><p>Hadamard’s Factorization of the Zeta Function</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>021</p></td>
+<td><p>The Riemann–von Mangoldt Formula</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>022</p></td>
+<td><p>The Classical Zero-Free Region Inside the Critical Strip</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>023</p></td>
+<td><p>Intro to Exponential Sums</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>024</p></td>
+<td><p>An Approximate Functional Equation for Zeta</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>025</p></td>
+<td><p>The Lindelöf Hypothesis</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>026</p></td>
+<td><p>The Phragmén–Lindelöf Principle</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>027</p></td>
+<td><p>The Prime Number Theorem (1/2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>028</p></td>
+<td><p>The Prime Number Theorem (2/2)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>029</p></td>
+<td><p>Visualizing the Riemann Hypothesis</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>030</p></td>
+<td><p>The Riemann–Siegel Z Function</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>031</p></td>
+<td><p>Dirichlet Series</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>032</p></td>
+<td><p>Möbius Inversion</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>033</p></td>
+<td><p>The Mertens Conjecture</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>034</p></td>
+<td><p>How the Mertens Conjecture was Disproved</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>035</p></td>
+<td><p>Diophantine Approximation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>036</p></td>
+<td><p>Omega Results for Re(s) ≥ 1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>037</p></td>
+<td><p>Zeta Can Get Close to Zero in Re(s) ≥ 1</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>038</p></td>
+<td><p>Mean Value Theorems of Zeta</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>039</p></td>
+<td><p>Riemann’s Global Equation for ζ</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>040</p></td>
+<td><p>Riemann’s Proof of the Functional Equation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>041</p></td>
+<td><p>Riemann’s Second Proof of the Functional Equation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>042</p></td>
+<td><p>Riemann’s ξ Function and the Origin of the Riemann Hypothesis</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>043</p></td>
+<td><p>Riemann’s Connection Between ζ and Primes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>044</p></td>
+<td><p>Primes as Waves</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>045</p></td>
+<td><p>Von Mangoldt’s Explicit Formula for ψ(x)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>046</p></td>
+<td><p>Zeta at Zero</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>047</p></td>
+<td><p>The Truncated Explicit Formula for ψ(x)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>048</p></td>
+<td><p>Proof of the Prime Number Theorem</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>049</p></td>
+<td><p>An Omega Bound on the Prime Number Theorem</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>050</p></td>
+<td><p>Littlewood’s Log Log Log Bound</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>051</p></td>
+<td><p>Skewes’ Number and Gauss’s False Conjecture on Primes</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>052</p></td>
+<td><p>Prime Gaps</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>053</p></td>
+<td><p>Zeta Gaps (Are ≤12)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>054</p></td>
+<td><p>Littlewood’s Log Log Log Bound on Zeta Gaps</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>055</p></td>
+<td><p>S(T) and the Accuracy of the Riemann–von Mangoldt Formula</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>056</p></td>
+<td><p>S(T) as a Divergent Sum of Prime Waves</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>057</p></td>
+<td><p>The Duality of Primes and Zeta Zeros</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>058</p></td>
+<td><p>The Riemann–Siegel Z and θ Functions</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>059</p></td>
+<td><p>Gram Points and Gram’s Law</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>060</p></td>
+<td><p>Hardy’s Proof of Infinitely Many Zeros on Critical Line</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>061</p></td>
+<td><p>The Hardy–Littlewood Approximate Functional Equation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>062</p></td>
+<td><p>The Cosine Sum on the Critical Line</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>063</p></td>
+<td><p>The Riemann–Siegel Formula</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>064</p></td>
+<td><p>Computational Methods for Zeta</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>065</p></td>
+<td><p>Example Computations and How to Find a Zero</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>066</p></td>
+<td><p>Edwards’ Speculation on the Riemann Hypothesis</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>067</p></td>
+<td><p>Historical Verification of the Riemann Hypothesis</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>068</p></td>
+<td><p>Turing’s Method of Verifying the Riemann Hypothesis</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>069</p></td>
+<td><p>Deep Dive into Gamma (Weierstrass Product Formula)</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>070</p></td>
+<td><p>Proving Gamma Formulas</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>071</p></td>
+<td><p>Laplace’s Method for Stirling’s Approximation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>072</p></td>
+<td><p>The Saddle-Point Method for Stirling’s Approximation</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>073</p></td>
+<td><p>The Riemann–Siegel Formula via Saddle-Point Method</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>074</p></td>
+<td><p>Titchmarsh’s Proof of Infinitely Many Zeros on Critical Line</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>075</p></td>
+<td><p>The Visible Grid Problem</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>076</p></td>
+<td><p>Euler’s Totient Function and its Dirichlet Series</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-right"><p>077</p></td>
+<td><p>Square-Free and k-Free Numbers</p></td>
+<td><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-right"><p>078</p></td>
+<td><p>Powerful Numbers</p></td>
+<td><p></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<hr class="docutils" />
+<section id="reference">
+<h2>Reference<a class="headerlink" href="#reference" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Ivić, A. (1985). <em>The Riemann Zeta-Function</em>. John Wiley &amp; Sons, New York.</p></li>
+<li><p>Titchmarsh, E. C. (1986). <em>The Theory of the Riemann Zeta-Function</em> (2nd ed., revised by D. R. Heath-Brown). Oxford University Press, Oxford.</p></li>
+<li><p>Edwards, H. M. (1974). <em>Riemann’s Zeta Function</em>. Academic Press, New York.</p></li>
+<li><p>Davenport, H. (2000). <em>Multiplicative Number Theory</em> (3rd ed.). Springer, New York.</p></li>
+<li><p>Euler, L. (1740). De summis serierum reciprocarum. <em>Commentarii academiae scientiarum Petropolitanae</em>, 7, 123–134.</p></li>
+<li><p>Riemann, B. (1859). Über die Anzahl der Primzahlen unter einer gegebenen Grösse. <em>Monatsberichte der Berliner Akademie</em>.</p></li>
+<li><p>YouTube: <a class="reference external" href="https://youtube.com/playlist?list=PLTcPERDxgHxm7TzJ9W92S-l5pGRuhZz10">Zeta Explained</a></p></li>
+</ul>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="right-next"
+       href="contents/lec-001/lec-001_notes.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">#01 Intro and the Basel Problem</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-this-course">About This Course</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lecture-list">Lecture List</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#reference">Reference</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By nyx7zen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

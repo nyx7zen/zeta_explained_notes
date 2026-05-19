@@ -1,0 +1,893 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>#03 Analytic Properties of Zeta &#8212; Zeta Explained Course Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=1b93cdf1" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "tagSide": "right", "macros": {"Re": "\\operatorname{Re}", "Im": "\\operatorname{Im}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/lec-003/lec-003_notes';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Figures" href="lec-003_figures.html" />
+    <link rel="prev" title="Figures" href="../lec-002/lec-002_figures.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Zeta Explained Course Notes</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Ch 1. 제타 함수의 기초와 오일러 곱</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lec-001/lec-001_notes.html">1. 서론 및 바젤 문제</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lec-001/lec-001_figures.html">Figures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lec-002/lec-002_notes.html">2. 복소평면에서의 제타 함수</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lec-002/lec-002_figures.html">Figures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">3. 제타의 해석적 성질</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="lec-003_figures.html">Figures</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/nyx7zen/zeta_explained_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/lec-003/lec-003_notes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>#03 Analytic Properties of Zeta</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 강의 목표와 증명 전략</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-convergence-pointwise-convergence">2. Uniform Convergence와 Pointwise Convergence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-sums">Partial sums의 정의</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointwise-convergence-uniform-convergence">Pointwise Convergence와 Uniform Convergence의 차이</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x-1-uniform-convergence">3. <span class="math notranslate nohighlight">\(x &gt; 1\)</span>에서 Uniform Convergence가 성립하지 않는 반례</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatorname-re-s-geq-1-a-uniform-convergence">4. <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서의 Uniform Convergence 증명</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tail-sum-r-n-s">Step 1: Tail sum <span class="math notranslate nohighlight">\(R_n(s)\)</span>의 정의</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-r-n-sigma-it-leq-r-n-sigma">Step 2: <span class="math notranslate nohighlight">\(|R_n(\sigma + it)| \leq R_n(\sigma)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-r-n-sigma-leq-r-n-1-a">Step 3: <span class="math notranslate nohighlight">\(R_n(\sigma) \leq R_n(1 + a)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-uniform-convergence">Step 4: Uniform convergence 확립</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeta-s-analyticity">5. <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 Analyticity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-convergence">Uniform convergence가 중요한 이유</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-function">Analytic function의 예시</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-limit-theorem">Uniform Limit Theorem과 결론</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">7. Review Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="analytic-properties-of-zeta">
+<h1>#03 Analytic Properties of Zeta<a class="headerlink" href="#analytic-properties-of-zeta" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 partial sums가
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>인 영역에서 uniformly convergent함을
+증명하고, uniform limit theorem을 통해 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서
+analytic function임을 확립한다.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Source</strong>: <a class="reference external" href="https://youtu.be/BFHXTkVaQAc?si=8yWef6ohl-ufYljs">Zeta Explained #03</a></p></li>
+<li><p><strong>Reference</strong>: <em>The Riemann Zeta-Function</em> by Aleksandar Ivić (John Wiley &amp; Sons, 1985)</p></li>
+</ul>
+<p><strong>Overview</strong></p>
+<p>Riemann zeta function을 설명하는 시리즈의 세 번째 강의이다. 이 시리즈는
+기초부터 시작하여 고급 주제까지 단계적으로 다루며, 수강자는 calculus와
+complex numbers에 대한 기본 지식을 갖추고 있다고 가정한다. Complex
+analysis의 관련 개념은 강의 중에 필요에 따라 설명한다. 참고 문헌은
+Aleksandar Ivić의 <em>The Riemann Zeta-Function: Theory and Applications</em>
+(John Wiley &amp; Sons, 1985)이다. 이 강의에서는 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 partial sums가
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>인 영역에서 uniformly convergent함을
+증명하고, 이로부터 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 analytic
+function임을 보인다.</p>
+<p><strong>Contents</strong></p>
+<ul class="simple">
+<li><p>강의 도입: <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 analytic properties 개요</p></li>
+<li><p>Uniform convergence의 정의 및 직관적 설명</p></li>
+<li><p>Pointwise convergence와 uniform convergence의 차이</p></li>
+<li><p><span class="math notranslate nohighlight">\(x &gt; 1\)</span>에서 <span class="math notranslate nohighlight">\(\zeta(x)\)</span>의 partial sums가 uniformly convergent하지 않음을 보이는 반례</p></li>
+<li><p><span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서 partial sums의 uniform convergence 증명</p></li>
+<li><p>Complex analysis에서 uniform convergence가 중요한 이유</p></li>
+<li><p>Analytic function의 정의 및 예시</p></li>
+<li><p>Uniform limit theorem 적용: <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 analytic임을 결론</p></li>
+</ul>
+<hr class="docutils" />
+<section id="id1">
+<h2>1. 강의 목표와 증명 전략<a class="headerlink" href="#id1" title="Link to this heading">#</a></h2>
+<p>Riemann zeta function은 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>인 복소수 <span class="math notranslate nohighlight">\(s\)</span>에 대해 다음과 같이
+정의된다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}
+\end{equation}
+\]</div>
+<p>이 강의의 목표는 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가 이 영역에서 어떤 analytic properties를 갖는지
+규명하는 것이다. 증명은 두 단계로 진행된다.</p>
+<p>첫째, <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 partial sums로 이루어진 함수열이 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>인
+영역에서 uniformly convergent함을 보인다. 여기서 <span class="math notranslate nohighlight">\(a &gt; 0\)</span>은 임의로 고정된
+양의 실수이다. <span class="math notranslate nohighlight">\(s \to 1\)</span>일 때 <span class="math notranslate nohighlight">\(\zeta(s) \to \infty\)</span>이므로, <span class="math notranslate nohighlight">\(s = 1\)</span>의
+singularity 근방에서의 발산을 피하기 위해 <span class="math notranslate nohighlight">\(a &gt; 0\)</span>으로 영역의 경계를
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 1\)</span>에서 멀리 떨어뜨린다.</p>
+<p>둘째, complex analysis의 uniform limit theorem을 적용하여 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 analytic임을 결론 내린다. Analytic function은
+단순히 continuous하거나 differentiable한 함수보다 훨씬 강한 조건을
+만족하는 함수로, infinitely differentiable하며 complex analysis의 강력한
+도구들을 적용할 수 있다.</p>
+</section>
+<hr class="docutils" />
+<section id="uniform-convergence-pointwise-convergence">
+<h2>2. Uniform Convergence와 Pointwise Convergence<a class="headerlink" href="#uniform-convergence-pointwise-convergence" title="Link to this heading">#</a></h2>
+<section id="partial-sums">
+<h3>Partial sums의 정의<a class="headerlink" href="#partial-sums" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 <span class="math notranslate nohighlight">\(n\)</span>번째 partial sum을 다음과 같이 정의한다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+f_n(s) = \sum_{k=1}^{n} \frac{1}{k^s}
+\end{equation}
+\]</div>
+<p>인덱스 변수로 <span class="math notranslate nohighlight">\(k\)</span>를 사용하는 것은, <span class="math notranslate nohighlight">\(n\)</span>이 이미 함수열의 인덱스로 쓰이기
+때문이다. 처음 몇 항은 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[
+f_1(s) = 1, \quad
+f_2(s) = 1 + \frac{1}{2^s}, \quad
+f_3(s) = 1 + \frac{1}{2^s} + \frac{1}{3^s}, \quad
+f_4(s) = 1 + \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{4^s}
+\]</div>
+<p>목표는 이 함수열 <span class="math notranslate nohighlight">\(\{f_n(s)\}\)</span>가 어떤 영역에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>로 uniformly
+convergent함을 보이는 것이다.</p>
+</section>
+<section id="pointwise-convergence-uniform-convergence">
+<h3>Pointwise Convergence와 Uniform Convergence의 차이<a class="headerlink" href="#pointwise-convergence-uniform-convergence" title="Link to this heading">#</a></h3>
+<p>두 convergence 개념의 핵심적인 차이는 <span class="math notranslate nohighlight">\(\epsilon\)</span>과 점의 선택 순서에 있다.</p>
+<p><strong>Pointwise convergence</strong>: 함수열 <span class="math notranslate nohighlight">\(f_1, f_2, \ldots\)</span>이 <span class="math notranslate nohighlight">\(f\)</span>로 pointwise
+convergent하다는 것은, 점 <span class="math notranslate nohighlight">\(x\)</span>를 먼저 고정한 후, 임의의 <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>에
+대해 <span class="math notranslate nohighlight">\(n \geq N\)</span>이면 <span class="math notranslate nohighlight">\(|f(x) - f_n(x)| &lt; \epsilon\)</span>을 만족하는 <span class="math notranslate nohighlight">\(N\)</span>이
+존재함을 의미한다. 이때 <span class="math notranslate nohighlight">\(N\)</span>은 <span class="math notranslate nohighlight">\(x\)</span>에 의존할 수 있다.</p>
+<p><strong>Uniform convergence</strong>: 복소함수열 <span class="math notranslate nohighlight">\(\{f_n\}\)</span>이 영역 <span class="math notranslate nohighlight">\(A\)</span> 위에서 <span class="math notranslate nohighlight">\(f\)</span>로
+uniformly convergent하다는 것은, 임의의 <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>에 대해 <span class="math notranslate nohighlight">\(n \geq N\)</span>이면
+영역 <span class="math notranslate nohighlight">\(A\)</span> 내의 모든 점 <span class="math notranslate nohighlight">\(z\)</span>에 대해 동시에 <span class="math notranslate nohighlight">\(|f(z) - f_n(z)| &lt; \epsilon\)</span>을
+만족하는 <span class="math notranslate nohighlight">\(N\)</span>이 존재함을 의미한다.</p>
+<p>핵심적인 차이는 <span class="math notranslate nohighlight">\(N\)</span>의 선택 방식이다. Pointwise convergence에서는 <span class="math notranslate nohighlight">\(N\)</span>이 점
+<span class="math notranslate nohighlight">\(x\)</span>에 의존할 수 있으나, uniform convergence에서는 <span class="math notranslate nohighlight">\(N\)</span>이 영역 내의 모든
+점에 대해 동시에 유효하여야 한다.</p>
+<p>이전 강의에서 integral test를 통해 <span class="math notranslate nohighlight">\(x &gt; 1\)</span>일 때 <span class="math notranslate nohighlight">\(\zeta(x)\)</span>가 pointwise
+convergent함을 이미 보였다. 그러나 아래에서 확인하듯, <span class="math notranslate nohighlight">\(\zeta(x)\)</span>의
+partial sums는 <span class="math notranslate nohighlight">\(x &gt; 1\)</span> 전체에서는 uniformly convergent하지 않다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="x-1-uniform-convergence">
+<h2>3. <span class="math notranslate nohighlight">\(x &gt; 1\)</span>에서 Uniform Convergence가 성립하지 않는 반례<a class="headerlink" href="#x-1-uniform-convergence" title="Link to this heading">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\zeta(x)\)</span>의 partial sums가 <span class="math notranslate nohighlight">\(x &gt; 1\)</span> 전체 영역에서 uniformly convergent하지
+않음을 반례로 보인다. 실수 입력만을 고려한다.</p>
+<p><span class="math notranslate nohighlight">\(\epsilon = 0.005\)</span>로 고정한다. <span class="math notranslate nohighlight">\(f_n(x)\)</span>의 각 항은 최대 <span class="math notranslate nohighlight">\(1\)</span>이므로
+<span class="math notranslate nohighlight">\(f_n(x) \leq n\)</span>이다. 이제 <span class="math notranslate nohighlight">\(x = 1 + \frac{1}{n+1}\)</span>로 선택하면, 이전
+강의의 integral test 결과에 의해</p>
+<div class="math notranslate nohighlight">
+\[
+\zeta\!\left(1 + \tfrac{1}{n+1}\right) &gt; n + 1
+\]</div>
+<p>이 성립한다. 따라서</p>
+<div class="math notranslate nohighlight">
+\[
+|\zeta(x) - f_n(x)| \geq (n+1) - n = 1 &gt; 0.005
+\]</div>
+<p>이므로, 어떤 고정된 <span class="math notranslate nohighlight">\(N\)</span>을 선택하더라도 <span class="math notranslate nohighlight">\(n \geq N\)</span>인 <span class="math notranslate nohighlight">\(n\)</span>에 대해 위 부등식을
+만족하는 <span class="math notranslate nohighlight">\(x\)</span>가 항상 존재한다. 따라서 uniform convergence의 정의를 만족하지
+않는다.</p>
+<p>이 반례의 근본 원인은 <span class="math notranslate nohighlight">\(x = 1\)</span>에서의 singularity이다. <span class="math notranslate nohighlight">\(x\)</span>를 <span class="math notranslate nohighlight">\(1\)</span>에 임의로
+가깝게 선택하면 <span class="math notranslate nohighlight">\(\zeta(x)\)</span>의 값을 임의로 크게 만들 수 있으므로, <span class="math notranslate nohighlight">\(f_n\)</span>이
+<span class="math notranslate nohighlight">\(\zeta\)</span>를 균일하게 근사할 수 없다.</p>
+<p><img alt="ζ(x)와 f_2(x)의 그래프 비교" src="../../_images/fig-003-001.png" /></p>
+<p><strong>Figure 1. <span class="math notranslate nohighlight">\(y = \zeta(x)\)</span>와 <span class="math notranslate nohighlight">\(y = f_2(x) = 1 + 1/2^x\)</span>의 그래프 비교</strong></p>
+<p>실수 <span class="math notranslate nohighlight">\(x &gt; 1\)</span>에서 <span class="math notranslate nohighlight">\(y = \zeta(x)\)</span>와 <span class="math notranslate nohighlight">\(y = f_2(x) = 1 + 1/2^x\)</span>를 함께 나타낸
+그래프이다. <span class="math notranslate nohighlight">\(\zeta(x)\)</span>는 <span class="math notranslate nohighlight">\(x \to 1^+\)</span>일 때 발산하여 <span class="math notranslate nohighlight">\(f_2(x)\)</span>와의 차이가
+무한히 커지는 반면, <span class="math notranslate nohighlight">\(x\)</span>가 충분히 크면 두 함수의 차이는 작아진다. 이 그래프는
+<span class="math notranslate nohighlight">\(x &gt; 1\)</span> 전체 영역에서 partial sums가 uniformly convergent하지 않음을 시각적으로
+보여준다. <span class="math notranslate nohighlight">\(x = 1\)</span>의 singularity 근방에서 임의로 큰 오차가 발생하므로,
+모든 <span class="math notranslate nohighlight">\(x &gt; 1\)</span>에 대해 균일하게 유효한 <span class="math notranslate nohighlight">\(N\)</span>을 선택하는 것은 불가능하다.</p>
+<p>이 문제를 해결하기 위해, <span class="math notranslate nohighlight">\(a &gt; 0\)</span>을 먼저 고정하고 영역을
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>로 제한하면 singularity로부터 충분한
+거리를 확보할 수 있다. 다음 섹션에서 이 영역에서의 uniform convergence를
+복소수 전체로 확장하여 증명한다.</p>
+</section>
+<hr class="docutils" />
+<section id="operatorname-re-s-geq-1-a-uniform-convergence">
+<h2>4. <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서의 Uniform Convergence 증명<a class="headerlink" href="#operatorname-re-s-geq-1-a-uniform-convergence" title="Link to this heading">#</a></h2>
+<section id="step-1-tail-sum-r-n-s">
+<h3>Step 1: Tail sum <span class="math notranslate nohighlight">\(R_n(s)\)</span>의 정의<a class="headerlink" href="#step-1-tail-sum-r-n-s" title="Link to this heading">#</a></h3>
+<p>Uniform convergence의 정의에서 <span class="math notranslate nohighlight">\(|f(z) - f_n(z)|\)</span>에 해당하는 양을 tail sum
+<span class="math notranslate nohighlight">\(R_n(s)\)</span>로 정의한다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+R_n(s) = \zeta(s) - f_n(s) = \sum_{k=n+1}^{\infty} \frac{1}{k^s}
+\end{equation}
+\]</div>
+<p><span class="math notranslate nohighlight">\(R_n(s)\)</span>는 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 무한급수에서 처음 <span class="math notranslate nohighlight">\(n\)</span>개의 항을 제거한 나머지
+합이다. Uniform convergence를 보이기 위해서는, 임의의 <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>에 대해
+영역 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span> 내의 모든 <span class="math notranslate nohighlight">\(s\)</span>에 대해 <span class="math notranslate nohighlight">\(|R_n(s)| &lt; \epsilon\)</span>을
+만족하는 <span class="math notranslate nohighlight">\(N\)</span>이 존재함을 보이면 충분하다. 표준 표기에 따라 <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>로
+쓰며, <span class="math notranslate nohighlight">\(\sigma = \operatorname{Re}(s)\)</span>, <span class="math notranslate nohighlight">\(t = \operatorname{Im}(s)\)</span>이다. 이
+강의에서 <span class="math notranslate nohighlight">\(\log\)</span>는 자연로그 <span class="math notranslate nohighlight">\(\log_e\)</span>를 의미한다.</p>
+</section>
+<section id="step-2-r-n-sigma-it-leq-r-n-sigma">
+<h3>Step 2: <span class="math notranslate nohighlight">\(|R_n(\sigma + it)| \leq R_n(\sigma)\)</span><a class="headerlink" href="#step-2-r-n-sigma-it-leq-r-n-sigma" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(s = \sigma + it\)</span>로 쓰면 <span class="math notranslate nohighlight">\(k^s = k^{\sigma+it} = k^\sigma \cdot k^{it}\)</span>이다.
+<span class="math notranslate nohighlight">\(k = e^{\log k}\)</span>임을 이용하여 전개하면,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+R_n(s)
+&amp;= \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma+it}}
+ = \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma} k^{it}}
+ = \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma}} k^{-it} \\
+&amp;= \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma}} \left(e^{\log k}\right)^{-it}
+ = \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma}} e^{-it(\log k)}
+\end{align*}
+\end{split}\]</div>
+<p>이제 triangle inequality를 적용한다. <span class="math notranslate nohighlight">\(|e^{i\theta}| = 1\)</span>이므로
+<span class="math notranslate nohighlight">\(|e^{-it(\log k)}| = 1\)</span>이 성립하며, <span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>이면</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+|R_n(\sigma + it)|
+&amp;= \left|\sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma}} e^{-it(\log k)}\right|
+ \leq \sum_{k=n+1}^{\infty} \left|\frac{1}{k^{\sigma}} e^{-it(\log k)}\right| \\
+&amp;= \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma}} \left|e^{-it(\log k)}\right|
+ = \sum_{k=n+1}^{\infty} \frac{1}{k^{\sigma}}
+\end{align*}
+\end{split}\]</div>
+<p>이므로, 다음이 성립한다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+|R_n(\sigma + it)| \leq R_n(\sigma)
+\end{equation}
+\]</div>
+<p>임의의 복소수 <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>에서 tail sum의 절댓값은 같은 실부 <span class="math notranslate nohighlight">\(\sigma\)</span>를
+갖는 실수에서의 tail sum 값으로 bound된다. 이 단계는 이전 강의에서
+<span class="math notranslate nohighlight">\(|\zeta(\sigma + it)| \leq \zeta(\sigma)\)</span>를 도출한 것과 완전히 동일한
+논리 구조이며, 합산의 시작 인덱스만 <span class="math notranslate nohighlight">\(n + 1\)</span>로 바뀐 것이다.</p>
+</section>
+<section id="step-3-r-n-sigma-leq-r-n-1-a">
+<h3>Step 3: <span class="math notranslate nohighlight">\(R_n(\sigma) \leq R_n(1 + a)\)</span><a class="headerlink" href="#step-3-r-n-sigma-leq-r-n-1-a" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\sigma \geq 1 + a\)</span>인 실수 <span class="math notranslate nohighlight">\(\sigma\)</span>에 대해 <span class="math notranslate nohighlight">\(R_n(\sigma)\)</span>와 <span class="math notranslate nohighlight">\(R_n(1 + a)\)</span>의
+각 항을 비교한다.</p>
+<div class="math notranslate nohighlight">
+\[
+R_n(1+a) = \frac{1}{(n+1)^{1+a}} + \frac{1}{(n+2)^{1+a}} + \frac{1}{(n+3)^{1+a}} + \cdots
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+R_n(\sigma)\ = \frac{1}{(n+1)^{\sigma}} + \frac{1}{(n+2)^{\sigma}} + \frac{1}{(n+3)^{\sigma}} + \cdots
+\]</div>
+<p><span class="math notranslate nohighlight">\(\sigma \geq 1 + a\)</span>이면 각 <span class="math notranslate nohighlight">\(k \geq n + 1\)</span>에 대해 <span class="math notranslate nohighlight">\(k^\sigma \geq k^{1+a}\)</span>이므로,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{k^\sigma} \leq \frac{1}{k^{1+a}}
+\]</div>
+<p>각 항을 비교하면 <span class="math notranslate nohighlight">\(R_n(\sigma) \leq R_n(1 + a)\)</span>가 성립한다.</p>
+</section>
+<section id="step-4-uniform-convergence">
+<h3>Step 4: Uniform convergence 확립<a class="headerlink" href="#step-4-uniform-convergence" title="Link to this heading">#</a></h3>
+<p>Step 2와 Step 3를 결합하면, <span class="math notranslate nohighlight">\(\sigma = \operatorname{Re}(s) \geq 1 + a\)</span>인
+임의의 복소수 <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>에 대해</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+|R_n(\sigma + it)| \leq R_n(\sigma) \leq R_n(1 + a)
+\end{equation}
+\]</div>
+<p>이 성립한다. 이제 고정점 <span class="math notranslate nohighlight">\(s = 1 + a\)</span>에서의 pointwise convergence를
+이용한다. 이전 강의에서 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>이면 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가
+pointwise convergent함을 integral test로 보였으므로, 임의의 <span class="math notranslate nohighlight">\(\epsilon &gt; 0\)</span>에
+대해</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N \implies R_n(1 + a) &lt; \epsilon
+\]</div>
+<p>을 만족하는 <span class="math notranslate nohighlight">\(N\)</span>이 존재한다. 바로 이 <span class="math notranslate nohighlight">\(N\)</span>을 사용하면, <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>인
+모든 <span class="math notranslate nohighlight">\(s\)</span>에 대해 동시에</p>
+<div class="math notranslate nohighlight">
+\[
+n \geq N \implies |R_n(\sigma + it)| \leq R_n(1+a) &lt; \epsilon
+\]</div>
+<p>이 성립한다. <span class="math notranslate nohighlight">\(N\)</span>은 <span class="math notranslate nohighlight">\(s\)</span>에 의존하지 않으므로 이는 uniform convergence의
+정의를 만족한다. 따라서 <span class="math notranslate nohighlight">\(f_n(s)\)</span>는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>인
+영역에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>로 uniformly convergent하다.</p>
+<p><img alt="복소평면에서 Re(s) ≥ 1+a 영역과 임의의 점 σ+it" src="../../_images/fig-003-002.png" /></p>
+<p><strong>Figure 2. <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span> 영역에서의 uniform convergence 증명 구조</strong></p>
+<p>복소평면에서 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>인 영역(회색 음영)과 임의의
+점 <span class="math notranslate nohighlight">\(\sigma + it\)</span>를 나타낸다. 가로축은 <span class="math notranslate nohighlight">\(\operatorname{Re}(s)\)</span>, 세로축은
+<span class="math notranslate nohighlight">\(\operatorname{Im}(s)\)</span>이며, <span class="math notranslate nohighlight">\(s = 1\)</span>은 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 singularity로 영역에
+포함되지 않는다. 증명의 핵심 구조는 영역 내 임의의 점 <span class="math notranslate nohighlight">\(\sigma + it\)</span>에서의
+<span class="math notranslate nohighlight">\(|R_n(\sigma + it)|\)</span>를, 먼저 실수축 위의 <span class="math notranslate nohighlight">\(R_n(\sigma)\)</span>로, 이어서 경계선
+위의 점 <span class="math notranslate nohighlight">\(R_n(1 + a)\)</span>로 bound하는 부등식 연쇄에 있다. 경계선 위의 고정점
+<span class="math notranslate nohighlight">\(s = 1 + a\)</span>에서의 pointwise convergence 하나만으로 영역 전체의 uniform
+convergence를 이끌어낼 수 있으며, 이때 선택된 <span class="math notranslate nohighlight">\(N\)</span>은 영역 내 모든 <span class="math notranslate nohighlight">\(s\)</span>에
+대해 동시에 유효하다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="zeta-s-analyticity">
+<h2>5. <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 Analyticity<a class="headerlink" href="#zeta-s-analyticity" title="Link to this heading">#</a></h2>
+<section id="uniform-convergence">
+<h3>Uniform convergence가 중요한 이유<a class="headerlink" href="#uniform-convergence" title="Link to this heading">#</a></h3>
+<p>Uniform convergence는 단순한 기술적 조건이 아니라, 수학적으로 유용한
+연산을 정당화하는 핵심 조건이다. Uniform convergence가 확보되면 급수와
+적분의 순서를 교환하거나, 급수와 미분의 순서를 교환하는 것이 허용된다.</p>
+<p>더 나아가 complex analysis의 강력한 도구들은 함수가 analytic하다는 조건을
+요구한다. Analytic function은 continuous하거나 단순히 differentiable한
+함수보다 훨씬 강한 조건을 만족하며, complex analysis에서 핵심적인 역할을
+한다.</p>
+</section>
+<section id="analytic-function">
+<h3>Analytic function의 예시<a class="headerlink" href="#analytic-function" title="Link to this heading">#</a></h3>
+<p>다음과 같이 익숙한 함수들은 모두 analytic이다.</p>
+<ul class="simple">
+<li><p>다항식: <span class="math notranslate nohighlight">\(z^5 - z^2 + 1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin(z)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(e^z\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(n^{-s} = e^{-\sigma(\log n)} e^{-it(\log n)}\)</span> (단, <span class="math notranslate nohighlight">\(s = \sigma + it\)</span>,
+<span class="math notranslate nohighlight">\(\sigma &gt; 1\)</span>, <span class="math notranslate nohighlight">\(n\)</span>은 양의 정수)</p></li>
+</ul>
+<p>두 analytic function의 합, 곱, 합성 역시 analytic이다. 따라서 각
+<span class="math notranslate nohighlight">\(f_n(s) = \sum_{k=1}^n k^{-s}\)</span>는 유한 개의 analytic function의 합으로서
+analytic이다.</p>
+<blockquote>
+<div><p><strong>참고</strong>: Weierstrass M-test를 이용하면 위의 증명을 더 간결하게 처리할
+수 있다. 이 정리는, 영역 <span class="math notranslate nohighlight">\(A\)</span> 내의 모든 <span class="math notranslate nohighlight">\(n\)</span>과 <span class="math notranslate nohighlight">\(z\)</span>에 대해 <span class="math notranslate nohighlight">\(|f_n(z)| \leq M_n\)</span>이
+성립하고 <span class="math notranslate nohighlight">\(\sum_{n=1}^{\infty} M_n\)</span>이 수렴하면, <span class="math notranslate nohighlight">\(\sum_{n=1}^{\infty} f_n(z)\)</span>가
+영역 <span class="math notranslate nohighlight">\(A\)</span>에서 uniformly convergent함을 주장한다. 강의자는 복소해석학의
+정리를 연속 적용하기보다 직관을 먼저 구축하고자 직접 증명의 방식을 택하였다.</p>
+</div></blockquote>
+</section>
+<section id="uniform-limit-theorem">
+<h3>Uniform Limit Theorem과 결론<a class="headerlink" href="#uniform-limit-theorem" title="Link to this heading">#</a></h3>
+<blockquote>
+<div><p><strong>주의</strong>: 이하의 uniform limit theorem은 강의에서 증명 없이 인용된다.
+함수열의 극한이 analytic이 되는 이유를 엄밀히 이해하려면 complex analysis
+교재를 참고하여야 한다.</p>
+</div></blockquote>
+<p><strong>Uniform Limit Theorem</strong>: 함수열 <span class="math notranslate nohighlight">\(\{f_n\}\)</span>이 analytic functions의 수열이고
+어떤 domain 위에서 <span class="math notranslate nohighlight">\(f\)</span>로 uniformly convergent하면, <span class="math notranslate nohighlight">\(f\)</span>는 그 domain 위에서
+analytic이다.</p>
+<p>이를 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>에 적용한다. 각 partial sum <span class="math notranslate nohighlight">\(f_n(s)\)</span>는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서
+analytic이고, 함수열 <span class="math notranslate nohighlight">\(\{f_n(s)\}\)</span>는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서
+<span class="math notranslate nohighlight">\(\zeta(s)\)</span>로 uniformly convergent함을 보였다. Uniform limit theorem에 의해
+<span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서 analytic이다.</p>
+<p><span class="math notranslate nohighlight">\(a &gt; 0\)</span>은 임의의 양수이므로 얼마든지 작게 선택할 수 있다. 따라서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>는
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>인 영역 전체에서 analytic이다.</p>
+<p><img alt="복소평면에서 ζ(s)가 analytic한 영역 Re(s) &gt; 1" src="../../_images/fig-003-003.png" /></p>
+<p><strong>Figure 3. 복소평면에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가 analytic한 영역 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span></strong></p>
+<p>복소평면에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가 analytic한 영역 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>(녹색
+음영)을 나타낸다. 가로축은 <span class="math notranslate nohighlight">\(\operatorname{Re}(s)\)</span>, 세로축은
+<span class="math notranslate nohighlight">\(\operatorname{Im}(s)\)</span>이며, 경계선 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 1\)</span>은 점선으로
+표시된다. <span class="math notranslate nohighlight">\(s = 1\)</span>은 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 singularity이므로 영역에 포함되지 않는다.
+이 강의에서 확립된 analyticity는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>로 제한되며,
+이후 강의들에서 analytic continuation을 통해 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>를 복소평면의 나머지
+영역으로 확장하게 된다. Figure 2와 비교하면, <span class="math notranslate nohighlight">\(a &gt; 0\)</span>을 임의로 작게 취하여
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서의 결론을 열린 반평면
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span> 전체로 확장하는 과정이 이 최종 결론에 반영되어
+있다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>6. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 <span class="math notranslate nohighlight">\(n\)</span>번째 partial sum을 <span class="math notranslate nohighlight">\(f_n(s) = \sum_{k=1}^n k^{-s}\)</span>로 정의하며,
+<span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 이 함수열의 극한이다.</p></li>
+<li><p>Pointwise convergence에서는 <span class="math notranslate nohighlight">\(N\)</span>이 점에 의존할 수 있으나, uniform
+convergence에서는 영역 내의 모든 점에 대해 동시에 유효한 <span class="math notranslate nohighlight">\(N\)</span>을 요구한다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(x &gt; 1\)</span> 전체 영역에서는 uniform convergence가 성립하지 않음을 반례로
+보였다. <span class="math notranslate nohighlight">\(x = 1 + \frac{1}{n+1}\)</span>로 선택하면 <span class="math notranslate nohighlight">\(\zeta(x) &gt; n+1\)</span>이지만
+<span class="math notranslate nohighlight">\(f_n(x) \leq n\)</span>이므로, <span class="math notranslate nohighlight">\(|R_n(x)| &gt; 1\)</span>이 항상 성립하여 uniform convergence의
+정의를 만족할 수 없다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a &gt; 0\)</span>을 고정하고 영역을 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>로 제한하면,
+tail sum <span class="math notranslate nohighlight">\(R_n(s)\)</span>에 대한 두 부등식 <span class="math notranslate nohighlight">\(|R_n(\sigma+it)| \leq R_n(\sigma) \leq R_n(1+a)\)</span>를
+통해 uniform convergence가 성립함을 증명하였다.</p></li>
+<li><p>각 <span class="math notranslate nohighlight">\(f_n(s)\)</span>는 analytic이고, uniform limit theorem에 의해 그 uniform limit인
+<span class="math notranslate nohighlight">\(\zeta(s)\)</span>도 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서 analytic이다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a &gt; 0\)</span>이 임의로 작을 수 있으므로, <span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>인
+영역 전체에서 analytic이다.</p></li>
+<li><p>이후 강의들에서는 이 영역에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 추가적인 성질을 탐구하고,
+analytic continuation을 통해 복소평면의 나머지 영역으로 확장하는 과정을
+다룬다.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="review-questions">
+<h2>7. Review Questions<a class="headerlink" href="#review-questions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Pointwise convergence와 uniform convergence의 정의를 각각 서술하고, 두
+개념의 핵심적인 차이를 <span class="math notranslate nohighlight">\(N\)</span>의 선택 방식을 중심으로 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(f_n(s)\)</span>가 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 pointwise convergent함은 이전
+강의에서 어떤 도구를 사용하여 보였는가? 그 논리의 핵심을 간략히 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta(x)\)</span>의 partial sums가 <span class="math notranslate nohighlight">\(x &gt; 1\)</span> 전체에서 uniformly convergent하지
+않음을 보이는 반례를 구성하라. <span class="math notranslate nohighlight">\(x = 1 + \frac{1}{n+1}\)</span>을 선택하면 왜
+<span class="math notranslate nohighlight">\(|R_n(x)| &gt; 1\)</span>이 성립하는가?</p></li>
+<li><p>Tail sum <span class="math notranslate nohighlight">\(R_n(s)\)</span>를 정의하고, uniform convergence를 보이기 위해 이 개념을
+도입하는 이유를 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(|R_n(\sigma + it)| \leq R_n(\sigma)\)</span>를 증명하라. 이때 <span class="math notranslate nohighlight">\(|e^{-it(\log k)}| = 1\)</span>이
+성립하는 이유를 기하학적으로 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sigma \geq 1 + a\)</span>일 때 <span class="math notranslate nohighlight">\(R_n(\sigma) \leq R_n(1 + a)\)</span>가 성립함을 term-by-term
+비교를 통해 보여라.</p></li>
+<li><p>두 부등식 <span class="math notranslate nohighlight">\(|R_n(\sigma+it)| \leq R_n(\sigma)\)</span>와 <span class="math notranslate nohighlight">\(R_n(\sigma) \leq R_n(1+a)\)</span>를
+결합하여 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서의 uniform convergence 증명을
+완성하라. 이때 고정점 <span class="math notranslate nohighlight">\(s = 1 + a\)</span>에서의 pointwise convergence가 어떤 역할을
+하는가?</p></li>
+<li><p>Weierstrass M-test를 서술하라. 이 정리를 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 partial sums에 직접
+적용하려면 <span class="math notranslate nohighlight">\(M_k\)</span>를 어떻게 설정하여야 하는가?</p></li>
+<li><p>Uniform limit theorem을 서술하고, 이를 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>에 적용하여 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 analytic임을 결론 짓는 논리를 서술하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(a &gt; 0\)</span>이 증명에서 임의로 선택 가능하다는 사실이 왜 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>가
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>가 아닌 열린 영역 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>
+전체에서 analytic임을 함의하는지 설명하라.</p></li>
+</ol>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents/lec-003"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../lec-002/lec-002_figures.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Figures</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lec-003_figures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Figures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">1. 강의 목표와 증명 전략</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-convergence-pointwise-convergence">2. Uniform Convergence와 Pointwise Convergence</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#partial-sums">Partial sums의 정의</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#pointwise-convergence-uniform-convergence">Pointwise Convergence와 Uniform Convergence의 차이</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#x-1-uniform-convergence">3. <span class="math notranslate nohighlight">\(x &gt; 1\)</span>에서 Uniform Convergence가 성립하지 않는 반례</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operatorname-re-s-geq-1-a-uniform-convergence">4. <span class="math notranslate nohighlight">\(\operatorname{Re}(s) \geq 1 + a\)</span>에서의 Uniform Convergence 증명</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-tail-sum-r-n-s">Step 1: Tail sum <span class="math notranslate nohighlight">\(R_n(s)\)</span>의 정의</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-r-n-sigma-it-leq-r-n-sigma">Step 2: <span class="math notranslate nohighlight">\(|R_n(\sigma + it)| \leq R_n(\sigma)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-r-n-sigma-leq-r-n-1-a">Step 3: <span class="math notranslate nohighlight">\(R_n(\sigma) \leq R_n(1 + a)\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-uniform-convergence">Step 4: Uniform convergence 확립</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeta-s-analyticity">5. <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 Analyticity</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-convergence">Uniform convergence가 중요한 이유</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-function">Analytic function의 예시</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#uniform-limit-theorem">Uniform Limit Theorem과 결론</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">6. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">7. Review Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By nyx7zen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

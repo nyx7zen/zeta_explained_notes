@@ -1,0 +1,928 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>#01 Intro and the Basel Problem &#8212; Zeta Explained Course Notes</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  <!--
+    this give us a css class that will be invisible only if js is disabled
+  -->
+  <noscript>
+    <style>
+      .pst-js-only { display: none !important; }
+
+    </style>
+  </noscript>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8878045cc6db502f8baf" rel="stylesheet" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=3c74b3bc" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=9c3e77be" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.11b39860a7a0cbfd473a3ad8a317855267ff0bd372690045ca344a6b62be495e.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/custom.css?v=1b93cdf1" />
+  
+  <!-- So that users can add custom icons -->
+  <script src="../../_static/scripts/fontawesome.js?digest=8878045cc6db502f8baf"></script>
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf" />
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=fab101a9"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=b8b12719"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>window.MathJax = {"tex": {"tags": "ams", "tagSide": "right", "macros": {"Re": "\\operatorname{Re}", "Im": "\\operatorname{Im}"}}, "options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'contents/lec-001/lec-001_notes';</script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Figures" href="lec-001_figures.html" />
+    <link rel="prev" title="Introduction" href="../../intro.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  <meta name="docsearch:version" content="" />
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <dialog id="pst-search-dialog">
+    
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form>
+  </dialog>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+      <dialog id="pst-primary-sidebar-modal"></dialog>
+      <div id="pst-primary-sidebar" class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../../intro.html">
+  
+  
+  
+  
+  
+  
+    <p class="title logo__title">Zeta Explained Course Notes</p>
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+<button class="btn search-button-field search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+ <i class="fa-solid fa-magnifying-glass"></i>
+ <span class="search-button__default-text">Search</span>
+ <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+</button></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1">
+                <a class="reference internal" href="../../intro.html">
+                    Introduction
+                </a>
+            </li>
+        </ul>
+        <p aria-level="2" class="caption" role="heading"><span class="caption-text">Ch 1. 제타 함수의 기초와 오일러 곱</span></p>
+<ul class="current nav bd-sidenav">
+<li class="toctree-l1 current active has-children"><a class="current reference internal" href="#">1. 서론 및 바젤 문제</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="lec-001_figures.html">Figures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lec-002/lec-002_notes.html">2. 복소평면에서의 제타 함수</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lec-002/lec-002_figures.html">Figures</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../lec-003/lec-003_notes.html">3. 제타의 해석적 성질</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../lec-003/lec-003_figures.html">Figures</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+      <div class="sidebar-primary-item">
+<div id="ethical-ad-placement"
+      class="flat"
+      data-ea-publisher="readthedocs"
+      data-ea-type="readthedocs-sidebar"
+      data-ea-manual="true">
+</div></div>
+  </div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/nyx7zen/zeta_explained_notes" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/contents/lec-001/lec-001_notes.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button pst-navbar-icon"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button pst-js-only" aria-label="Color mode" data-bs-title="Color mode"  data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <i class="theme-switch fa-solid fa-sun                fa-lg" data-mode="light" title="Light"></i>
+  <i class="theme-switch fa-solid fa-moon               fa-lg" data-mode="dark"  title="Dark"></i>
+  <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"  title="System Settings"></i>
+</button>
+
+
+<button class="btn btn-sm pst-navbar-icon search-button search-button__button pst-js-only" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+</button>
+<button class="sidebar-toggle secondary-toggle btn btn-sm pst-navbar-icon" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>#01 Intro and the Basel Problem</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeta-in-the-complex-plane">1. Zeta in the Complex Plane</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros">Zeros의 분류</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#riemann-hypothesis-1859">Riemann Hypothesis (1859)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-this-series">2. Scope of This Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">3. Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zeta-function">4. The Zeta Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">특수값</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-continuation-zeta-1">Analytic continuation과 <span class="math notranslate nohighlight">\(\zeta(-1)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basel-problem">5. The Basel Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">역사적 배경</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation">6. Numerical Approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-proof-of-the-basel-problem">7. Euler’s Proof of the Basel Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-taylor-series-of-sin-x">Step 1. Taylor Series of <span class="math notranslate nohighlight">\(\sin x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-zeros-of-sin-x">Step 2. Zeros of <span class="math notranslate nohighlight">\(\sin x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-factorization-analogy">Step 3. Factorization Analogy (유한한 경우)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-sine-product-formula-euler-s-factorization">Step 4. Sine Product Formula (Euler’s factorization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-x-2">Step 5. <span class="math notranslate nohighlight">\(x^2\)</span> 계수 비교</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6">Step 6. 결론</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">9. Review Questions</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="intro-and-the-basel-problem">
+<h1>#01 Intro and the Basel Problem<a class="headerlink" href="#intro-and-the-basel-problem" title="Link to this heading">#</a></h1>
+<blockquote>
+<div><p>Riemann zeta function의 기본 성질을 소개하고, Basel problem
+<span class="math notranslate nohighlight">\(\zeta(2) = \pi^2/6\)</span>을 Euler의 sine product formula를 이용하여 증명한다.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p><strong>Source</strong>: <a class="reference external" href="https://youtu.be/RMFt-9PzF54">Zeta Explained #01</a></p></li>
+<li><p><strong>Reference</strong>: <em>The Riemann Zeta-Function</em> by Aleksandar Ivić (John Wiley &amp; Sons, 1985)</p></li>
+</ul>
+<p><strong>Overview</strong></p>
+<p>Riemann zeta function을 설명하는 시리즈의 첫 번째 강의이다. 이 시리즈는
+기초부터 시작하여 critical strip 내 zero의 개수를 <span class="math notranslate nohighlight">\(O(T \log T)\)</span>로 추정하는
+Riemann–von Mangoldt equation까지 단계적으로 다룬다. 수강자는 calculus와
+complex numbers에 대한 기본 지식을 갖추고 있다고 가정하며, complex analysis의
+관련 개념은 강의 중에 필요에 따라 설명한다. 이 강의에서는 zeta function의
+소개와 Basel problem의 증명을 다룬다.</p>
+<p><strong>Contents</strong></p>
+<ul class="simple">
+<li><p>Riemann zeta function의 소개 및 기본 성질</p></li>
+<li><p>강의 시리즈의 범위: Basel problem에서 Riemann–von Mangoldt equation까지</p></li>
+<li><p>Riemann zeta function의 정의</p></li>
+<li><p><span class="math notranslate nohighlight">\(1 + 2 + 3 + 4 + \cdots = -1/12\)</span>의 의미와 analytic continuation</p></li>
+<li><p>Basel problem: <span class="math notranslate nohighlight">\(\zeta(2) = \pi^2/6\)</span>의 소개</p></li>
+<li><p>Basel problem 증명의 개요</p></li>
+<li><p>유한한 경우의 함수 factorization</p></li>
+<li><p>Sine function의 infinite product factorization</p></li>
+<li><p>Infinite product 전개와 <span class="math notranslate nohighlight">\(x^2\)</span> 계수 추출</p></li>
+<li><p>계수 비교를 통한 Basel problem 해결</p></li>
+</ul>
+<hr class="docutils" />
+<section id="zeta-in-the-complex-plane">
+<h2>1. Zeta in the Complex Plane<a class="headerlink" href="#zeta-in-the-complex-plane" title="Link to this heading">#</a></h2>
+<p>Riemann zeta function <span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 complex function으로, 복소수 <span class="math notranslate nohighlight">\(s\)</span>를 입력으로 받아 복소수를 출력한다. 복소평면(complex plane)은 수평 방향의 real axis와 수직 방향의 imaginary axis로 구성된 2차원 평면으로, 복소수 <span class="math notranslate nohighlight">\(s = \sigma + it\)</span> (<span class="math notranslate nohighlight">\(\sigma, t \in \mathbb{R}\)</span>)를 시각화하는 데 사용된다. 이 강의 시리즈 전반에 걸쳐 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 입력 공간, 즉 complex plane을 시각화하는 방식으로 논의가 전개된다.</p>
+<p><span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 두 가지 핵심 성질은 다음과 같다.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 <span class="math notranslate nohighlight">\(s = 1\)</span>에서 <strong>pole</strong>(singularity)을 가진다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta(s) = 0\)</span>이 되는 <span class="math notranslate nohighlight">\(s\)</span>의 값, 즉 <strong>zeros</strong>의 분포가 핵심 관심사이다.</p></li>
+</ul>
+<section id="zeros">
+<h3>Zeros의 분류<a class="headerlink" href="#zeros" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 zeros는 두 종류로 구분된다.</p>
+<p><strong>Trivial zeros</strong>는 음의 짝수 정수에 위치하며, 이후 강의에서 증명된다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(-2) = \zeta(-4) = \zeta(-6) = \cdots = 0
+\end{equation}
+\]</div>
+<p><strong>Nontrivial zeros</strong>는 다음과 같이 정의되는 <strong>critical strip</strong> 내부에 무한히 많이 존재한다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+0 &lt; \operatorname{Re}(s) &lt; 1
+\end{equation}
+\]</div>
+<p>Critical strip은 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 0\)</span>과 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 1\)</span>을 양 경계로 하는 무한히 긴 수직 띠 영역이다. Nontrivial zeros의 개수가 무한함은 이후 강의에서 증명된다.</p>
+<p>현재까지 수치적으로 확인된 첫 번째 nontrivial zeros는 다음과 같다 (소수점 이하 두 자리로 반올림).</p>
+<div class="math notranslate nohighlight">
+\[
+s = \frac{1}{2} \pm 14.13i, \quad
+s = \frac{1}{2} \pm 21.02i, \quad
+s = \frac{1}{2} \pm 25.01i, \quad \ldots
+\]</div>
+<p>이들 값은 모두 무리수이며, 그래프에서는 반올림된 값으로 표시된다.</p>
+<p><img alt="복소평면에서 zeta(s)의 zeros 분포" src="../../_images/fig-001-001.png" /></p>
+<p><strong>Figure 1. 복소평면에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 zeros 분포</strong></p>
+<p>복소평면에서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 zeros 분포를 나타낸다. Trivial
+zeros(녹색)는 음의 짝수 정수 <span class="math notranslate nohighlight">\(s = -2, -4, -6, \ldots\)</span>에 위치한다. Nontrivial
+zeros(적색)는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 0\)</span>과 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 1\)</span>을 양
+경계로 하는 critical strip 내부에 존재하며, 그 개수는 무한하다. 현재까지
+수치적으로 확인된 모든 nontrivial zeros는 예외 없이 critical line
+<span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 1/2\)</span> 위에 위치한다. Riemann hypothesis는 이 관찰이
+모든 nontrivial zeros에 대해 성립한다고 주장하지만, 이는 아직 증명되지 않은
+conjecture이다. 그래프에 표시된 첫 번째 zeros의 허수부 값 <span class="math notranslate nohighlight">\(14.13\)</span>, <span class="math notranslate nohighlight">\(21.02\)</span>,
+<span class="math notranslate nohighlight">\(25.01\)</span>은 모두 무리수이며, 반올림된 값으로 표시되어 있다.</p>
+</section>
+<section id="riemann-hypothesis-1859">
+<h3>Riemann Hypothesis (1859)<a class="headerlink" href="#riemann-hypothesis-1859" title="Link to this heading">#</a></h3>
+<p>Riemann hypothesis는 모든 nontrivial zeros가 다음 <strong>critical line</strong> 위에 놓인다고 주장한다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\operatorname{Re}(s) = \frac{1}{2}
+\end{equation}
+\]</div>
+<p>이는 단순히 zeros가 critical strip 안에 존재한다는 사실보다 훨씬 강한 주장이다. 현재까지 발견된 모든 nontrivial zeros는 Riemann hypothesis를 만족하지만, 이 명제는 아직 증명되지 않은 conjecture로 남아 있다. Clay Mathematics Institute의 Millennium Prize Problem 중 하나로 선정되어, 증명 또는 반례 제시에 $1,000,000달러의 상금이 걸려 있다. 단 하나의 반례, 즉 critical line 위에 놓이지 않는 nontrivial zero를 발견하는 것만으로도 상금 수령이 가능하다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="scope-of-this-series">
+<h2>2. Scope of This Series<a class="headerlink" href="#scope-of-this-series" title="Link to this heading">#</a></h2>
+<p>본 강의 시리즈는 Basel problem을 출발점으로 삼아, Ivić(1985)의 저서 1장을 따라 다음 주제들을 순서대로 다룬다.</p>
+<ul class="simple">
+<li><p>The Euler product formula</p></li>
+<li><p>Analytic continuation</p></li>
+<li><p>Laurent series for <span class="math notranslate nohighlight">\(\zeta(s)\)</span> at <span class="math notranslate nohighlight">\(s = 1\)</span></p></li>
+<li><p>The functional equation relating <span class="math notranslate nohighlight">\(\zeta(s)\)</span> to <span class="math notranslate nohighlight">\(\zeta(1-s)\)</span></p></li>
+<li><p>The Hadamard product formula</p></li>
+<li><p>The Riemann–von Mangoldt equation</p></li>
+<li><p>The Riemann Hypothesis and the Lindelöf Hypothesis</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="prerequisites">
+<h2>3. Prerequisites<a class="headerlink" href="#prerequisites" title="Link to this heading">#</a></h2>
+<p>본 강의 시리즈를 학습하기 위해 필요한 사전 지식은 다음과 같다.</p>
+<ul class="simple">
+<li><p><strong>Calculus</strong>: 증명의 상당 부분이 integral과 infinite series를 포함하므로, 기초 미적분학 지식이 필수적으로 요구된다. 특히 수렴·발산 판정, 급수 전개, 적분 기법에 익숙하여야 한다.</p></li>
+<li><p><strong>Complex numbers</strong>: 복소수 <span class="math notranslate nohighlight">\(z = a + bi\)</span> (<span class="math notranslate nohighlight">\(a, b \in \mathbb{R}\)</span>, <span class="math notranslate nohighlight">\(i = \sqrt{-1}\)</span>)의 기본 개념과 복소평면에서의 해석 방법을 숙지하여야 한다. <span class="math notranslate nohighlight">\(e^{i\pi} = -1\)</span>과 같은 Euler의 공식이 의미하는 바를 직관적으로 이해하고 있을 것을 권장한다.</p></li>
+<li><p><strong>Complex analysis</strong>: 강의의 주제 자체가 complex analysis이나, 사전 지식이 반드시 요구되지는 않는다. 강의 방침은 다음과 같다. complex analysis의 일반적인 정리는 증명 없이 인용하고, <span class="math notranslate nohighlight">\(\zeta(s)\)</span>에 직접 관련된 결과만 상세히 증명한다. 따라서 강의를 수강하며 필요한 내용을 함께 습득하는 것이 가능하다.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="the-zeta-function">
+<h2>4. The Zeta Function<a class="headerlink" href="#the-zeta-function" title="Link to this heading">#</a></h2>
+<p>실수 <span class="math notranslate nohighlight">\(s &gt; 1\)</span>에서 Riemann zeta function은 다음과 같이 정의된다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(s) = \sum_{n=1}^{\infty} \frac{1}{n^s}
+= 1 + \frac{1}{2^s} + \frac{1}{3^s} + \frac{1}{4^s} + \cdots
+\end{equation}
+\]</div>
+<p>변수로 <span class="math notranslate nohighlight">\(s\)</span>를 사용하는 것은 역사적 관례에 따른 것으로, 일반적인 calculus에서 사용하는 <span class="math notranslate nohighlight">\(x\)</span>와 동일한 역할을 한다. 이 급수는 <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>을 만족하는 모든 복소수 <span class="math notranslate nohighlight">\(s\)</span>에 대해 수렴함이 알려져 있으며, 이후 강의에서 analytic continuation을 통해 <span class="math notranslate nohighlight">\(s \neq 1\)</span>인 모든 복소수로 정의역이 확장된다.</p>
+<section id="id1">
+<h3>특수값<a class="headerlink" href="#id1" title="Link to this heading">#</a></h3>
+<p><strong>Basel problem</strong> (<span class="math notranslate nohighlight">\(s = 2\)</span>): 자연수의 제곱에 대한 역수의 합으로, 이 강의의 주된 증명 대상이다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(2) = 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots = \frac{\pi^2}{6}
+\end{equation}
+\]</div>
+<p><strong>Pole</strong> (<span class="math notranslate nohighlight">\(s = 1\)</span>): <span class="math notranslate nohighlight">\(s = 1\)</span>을 대입하면 harmonic series가 되어 발산한다. 따라서 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 <span class="math notranslate nohighlight">\(s = 1\)</span>에서 정의되지 않으며, 이 점이 유일한 pole이다. 엄밀히는 <span class="math notranslate nohighlight">\(s &gt; 1\)</span>인 경우에만 급수 정의가 유효하므로, <span class="math notranslate nohighlight">\(s = 1\)</span>의 대입 자체가 허용되지 않으나, 발산의 양상을 이해하기 위한 예시로 제시된다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(1) = 1 + \frac{1}{2} + \frac{1}{3} + \frac{1}{4} + \cdots \quad \text{(발산)}
+\end{equation}
+\]</div>
+<p><strong><span class="math notranslate nohighlight">\(s &lt; 1\)</span>인 경우</strong>: <span class="math notranslate nohighlight">\(s &lt; 1\)</span>이면 각 항 <span class="math notranslate nohighlight">\(1/n^s\)</span>가 <span class="math notranslate nohighlight">\(s = 1\)</span>의 대응 항 <span class="math notranslate nohighlight">\(1/n\)</span>보다 크거나 같다. 즉, 각 항을 harmonic series의 항과 비교(comparison test)하면,</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{1}{n^s} \geq \frac{1}{n} \quad (s \leq 1, \; n \geq 1)
+\]</div>
+<p>이므로 harmonic series의 발산에 의해 <span class="math notranslate nohighlight">\(s \leq 1\)</span>인 모든 실수에 대해 급수가 발산한다. 특히 <span class="math notranslate nohighlight">\(s = 0\)</span>이면 각 항이 모두 <span class="math notranslate nohighlight">\(n^0 = 1\)</span>이 되어 급수가 발산함을 직접 확인할 수 있다.</p>
+</section>
+<section id="analytic-continuation-zeta-1">
+<h3>Analytic continuation과 <span class="math notranslate nohighlight">\(\zeta(-1)\)</span><a class="headerlink" href="#analytic-continuation-zeta-1" title="Link to this heading">#</a></h3>
+<p>Analytic continuation을 통해 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>를 <span class="math notranslate nohighlight">\(s \neq 1\)</span>인 모든 복소수로 확장하면, 형식적으로는 발산하는 급수에 해당하는 값에도 의미를 부여할 수 있다. 대표적인 예로,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(-1) = -\frac{1}{12}
+\end{equation}
+\]</div>
+<p>이 있다. 이는 Numberphile의 YouTube 영상(2014)을 통해 널리 알려진 결과로,</p>
+<div class="math notranslate nohighlight">
+\[
+1 + 2 + 3 + 4 + \cdots = -\frac{1}{12}
+\]</div>
+<p>와 같이 표현되기도 한다. <span class="math notranslate nohighlight">\(\zeta(-1)\)</span>에 형식적으로 급수 정의를 적용하면 <span class="math notranslate nohighlight">\(1/n^{-1} = n\)</span>이므로 <span class="math notranslate nohighlight">\(1 + 2 + 3 + \cdots\)</span>가 되는데, 이를 <span class="math notranslate nohighlight">\(-1/12\)</span>와 등치시키는 것은 analytic continuation의 의미에서 성립하는 것이다. 해당 급수가 통상적인 의미에서 수렴한다는 뜻이 아님에 주의하여야 한다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="the-basel-problem">
+<h2>5. The Basel Problem<a class="headerlink" href="#the-basel-problem" title="Link to this heading">#</a></h2>
+<section id="id2">
+<h3>역사적 배경<a class="headerlink" href="#id2" title="Link to this heading">#</a></h3>
+<p>Basel problem은 Pietro <strong>Mengoli</strong>(1650)가 최초로 제기한 문제로, 양의 정수의 제곱에 대한 역수의 합이 어떤 값으로 수렴하는지를 묻는다.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2}
+= 1 + \frac{1}{4} + \frac{1}{9} + \frac{1}{16} + \cdots = \; ???
+\]</div>
+<p>이 문제는 약 80년간 미해결로 남아 있다가, <strong>Euler</strong>(1734–5)에 의해 최초로 해결되었다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(2) = \sum_{n=1}^{\infty} \frac{1}{n^2} = \frac{\pi^2}{6}
+\end{equation}
+\]</div>
+<p>Euler의 원래 증명은 현대적 기준에서 완전히 엄밀하다고 보기 어려운 부분을 포함하고 있으나, 핵심 아이디어는 수학적으로 타당하며 깊은 통찰을 담고 있다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="numerical-approximation">
+<h2>6. Numerical Approximation<a class="headerlink" href="#numerical-approximation" title="Link to this heading">#</a></h2>
+<p>Euler는 Basel problem의 닫힌 형태(closed form)를 추측하기 위해 먼저 수치적 근사를 수행하였다. 이 과정은 증명보다 선행된 발견적(heuristic) 접근이었다.</p>
+<p>단순한 partial sum의 방법은 수렴 속도가 매우 느리다는 문제가 있다. 첫 10,000항까지 더하면 다음과 같은 결과를 얻는데,</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{10{,}000} \frac{1}{n^2} = 1.644834\ldots \quad \text{(소수점 3자리만 정확)}
+\]</div>
+<p>이는 <span class="math notranslate nohighlight">\(n^{-2}\)</span>의 수렴 속도가 <span class="math notranslate nohighlight">\(O(N^{-1})\)</span>로 느리기 때문이다. 당시 1700년대의 계산 환경에서 <span class="math notranslate nohighlight">\(1/9{,}801\)</span>이나 <span class="math notranslate nohighlight">\(1/7{,}137^2\)</span>과 같은 값을 손으로 계산하는 것은 사실상 불가능에 가까웠다.</p>
+<p>이러한 한계를 극복하기 위해 Euler는 <strong>Euler-Maclaurin summation</strong> 기법을 활용하여 20자리 정확도를 달성하였다.</p>
+<div class="math notranslate nohighlight">
+\[
+\sum_{n=1}^{\infty} \frac{1}{n^2} \approx 1.6449340668482264364\ldots
+\]</div>
+<p>한편 1730년경에는 이미 <span class="math notranslate nohighlight">\(\pi\)</span>가 100자리 이상의 정밀도로 계산되어 있었다. Euler는 위에서 얻은 수치와 <span class="math notranslate nohighlight">\(\pi^2/6\)</span>의 값을 비교하여 이 급수의 합이 <span class="math notranslate nohighlight">\(\pi^2/6\)</span>임을 추측하였고, 이후 이를 증명하는 데 성공하였다. 결과에 <span class="math notranslate nohighlight">\(\pi\)</span>가 포함되어 있다는 점에서, sine 함수가 증명의 열쇠가 될 것임을 자연스럽게 예상할 수 있다.</p>
+</section>
+<hr class="docutils" />
+<section id="euler-s-proof-of-the-basel-problem">
+<h2>7. Euler’s Proof of the Basel Problem<a class="headerlink" href="#euler-s-proof-of-the-basel-problem" title="Link to this heading">#</a></h2>
+<p>Euler의 증명은 <span class="math notranslate nohighlight">\(\sin x / x\)</span>에 대한 두 가지 표현, 즉 Taylor series와 infinite product factorization의 <span class="math notranslate nohighlight">\(x^2\)</span> 계수를 비교하는 방식으로 이루어진다.</p>
+<p><img alt="Euler의 Basel problem 증명 구조" src="../../_images/fig-001-002.png" /></p>
+<p><strong>Figure 2. Euler의 Basel problem 증명 구조</strong></p>
+<p>Euler의 Basel problem 증명 구조를 슬라이드에 나타낸 것이다.
+<span class="math notranslate nohighlight">\(\sin x / x\)</span>는 두 가지 방식으로 전개된다. 좌변은 Taylor series로부터</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\sin x}{x} = 1 - \frac{1}{3!}x^2 + \cdots
+\]</div>
+<p>이며, <span class="math notranslate nohighlight">\(x^2\)</span>의 계수 <span class="math notranslate nohighlight">\(-1/6\)</span>은 이미 알려진 결과이다. 우변은 infinite product
+factorization으로부터</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\sin x}{x} = 1 - \frac{\zeta(2)}{\pi^2}x^2 + \cdots
+\]</div>
+<p>이며, <span class="math notranslate nohighlight">\(x^2\)</span>의 계수 <span class="math notranslate nohighlight">\(-\zeta(2)/\pi^2\)</span>을 도출하는 것이 증명의 핵심 단계이다.
+슬라이드에서 이 단계는 가장 어려운 부분으로 강조되어 있다. 두 전개의 <span class="math notranslate nohighlight">\(x^2\)</span>
+계수를 등치시키면 <span class="math notranslate nohighlight">\(\zeta(2) = \pi^2/6\)</span>이 즉시 얻어진다. 증명의 논리적 흐름은
+두 개의 독립적인 전개를 한 점에서 비교하는 단순한 구조임에도 불구하고,
+결과로 나오는 <span class="math notranslate nohighlight">\(\pi\)</span>와 <span class="math notranslate nohighlight">\(\zeta\)</span> 사이의 연결이 갖는 수학적 깊이가 이 증명을
+특별하게 만든다.</p>
+<section id="step-1-taylor-series-of-sin-x">
+<h3>Step 1. Taylor Series of <span class="math notranslate nohighlight">\(\sin x\)</span><a class="headerlink" href="#step-1-taylor-series-of-sin-x" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\sin x\)</span>의 Taylor series는 다음과 같이 잘 알려져 있다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\sin x = x - \frac{1}{3!}x^3 + \frac{1}{5!}x^5 - \cdots
+\end{equation}
+\]</div>
+<p>양변을 <span class="math notranslate nohighlight">\(x\)</span>로 나누면,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\sin x}{x} = 1 - \frac{1}{3!}x^2 + \frac{1}{5!}x^4 - \cdots
+\end{equation}
+\]</div>
+<p>를 얻는다. 여기서 <span class="math notranslate nohighlight">\(x^2\)</span>의 계수는 <span class="math notranslate nohighlight">\(-1/3! = -1/6\)</span>임을 기억한다.</p>
+</section>
+<section id="step-2-zeros-of-sin-x">
+<h3>Step 2. Zeros of <span class="math notranslate nohighlight">\(\sin x\)</span><a class="headerlink" href="#step-2-zeros-of-sin-x" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\sin x\)</span>의 zeros는 다음과 같다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\sin x = 0 \iff x = n\pi, \quad n \in \mathbb{Z}
+\end{equation}
+\]</div>
+<p>또한 <span class="math notranslate nohighlight">\((\sin x)' = \cos x\)</span>이므로 <span class="math notranslate nohighlight">\(f'(0) = \cos(0) = 1\)</span>이 성립하고, <span class="math notranslate nohighlight">\(\sin x\)</span>의 Taylor series는 <span class="math notranslate nohighlight">\(x + \cdots\)</span>의 형태로 시작한다. 이 조건, 즉 <span class="math notranslate nohighlight">\(x = 0\)</span> 근방에서 <span class="math notranslate nohighlight">\(\sin x \approx x\)</span>라는 사실은 이후 product formula를 구성하는 데 핵심적으로 활용된다.</p>
+</section>
+<section id="step-3-factorization-analogy">
+<h3>Step 3. Factorization Analogy (유한한 경우)<a class="headerlink" href="#step-3-factorization-analogy" title="Link to this heading">#</a></h3>
+<p>무한 곱으로의 확장을 이해하기 위해, 먼저 유한한 경우의 factorization 패턴을 관찰한다. 양의 정수 <span class="math notranslate nohighlight">\(1, 2, 3, \ldots\)</span>에서 zeros를 가지는 다항식을 Taylor series의 첫 항이 <span class="math notranslate nohighlight">\(x\)</span>가 되도록 정규화하면 다음과 같은 패턴이 나타난다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+x(x-1) &amp;= -x(1-x) \\
+x(x-1)(x-2) &amp;= x(1-x)(2-x) \\
+x(x-1)(x-2)(x-3) &amp;= -x(1-x)(2-x)(3-x) \\
+x(x-1)(x-2)(x-3)(x-4) &amp;= x(1-x)(2-x)(3-x)(4-x)
+\end{align*}
+\end{split}\]</div>
+<p>각 단계에서 <span class="math notranslate nohighlight">\((x - k)\)</span>를 <span class="math notranslate nohighlight">\((k - x)\)</span>로 뒤집으면 부호가 바뀐다. 이 부호 변화는 인수의 개수에 따라 교대로 나타나므로, 인수의 수가 짝수이면 전체 부호가 양수, 홀수이면 음수가 된다. <span class="math notranslate nohighlight">\(n\)</span>개의 인수를 가지는 경우 <span class="math notranslate nohighlight">\(x\)</span>의 계수가 <span class="math notranslate nohighlight">\(n!\)</span>로 성장하므로, 이를 <span class="math notranslate nohighlight">\(n!\)</span>로 나누어 <span class="math notranslate nohighlight">\(x\)</span>의 계수를 1로 고정하면 다음과 같은 형태를 얻는다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{1}{n!} x(x-1)\cdots(x-n+1)
+= x\!\left(1-\frac{x}{1}\right)\!\left(1-\frac{x}{2}\right)\cdots\!\left(1-\frac{x}{n-1}\right)
+\end{equation}
+\]</div>
+<p>이 함수는 <span class="math notranslate nohighlight">\(x = 0, 1, \ldots, n-1\)</span>에서 zeros를 가지며, Taylor series의 첫 항이 <span class="math notranslate nohighlight">\(x\)</span>임을 확인할 수 있다.</p>
+</section>
+<section id="step-4-sine-product-formula-euler-s-factorization">
+<h3>Step 4. Sine Product Formula (Euler’s factorization)<a class="headerlink" href="#step-4-sine-product-formula-euler-s-factorization" title="Link to this heading">#</a></h3>
+<p><span class="math notranslate nohighlight">\(\sin x\)</span>는 <span class="math notranslate nohighlight">\(x = n\pi\)</span> (<span class="math notranslate nohighlight">\(n \in \mathbb{Z}\)</span>)에서 zeros를 가지고, Taylor series의 첫 항이 <span class="math notranslate nohighlight">\(x\)</span>인 점이 위의 유한한 경우와 완전히 유사하다. Euler는 이를 무한한 경우로 확장하여, <span class="math notranslate nohighlight">\(\sin x\)</span>의 factorization이 다음과 같이 표현된다고 주장하였다.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\sin x &amp;= x
+\left(1 - \frac{x}{\pi}\right)\!\left(1 + \frac{x}{\pi}\right)
+\left(1 - \frac{x}{2\pi}\right)\!\left(1 + \frac{x}{2\pi}\right) \cdots \notag \\
+&amp;= x \prod_{n=1}^{\infty}\left(1 - \frac{x}{n\pi}\right)\!\left(1 + \frac{x}{n\pi}\right)
+\end{align}
+\end{split}\]</div>
+<p>여기서 차이의 곱 공식 <span class="math notranslate nohighlight">\((a-b)(a+b) = a^2 - b^2\)</span>을 이용하여 각 pair를 결합하면,</p>
+<div class="math notranslate nohighlight">
+\[
+\left(1 - \frac{x}{n\pi}\right)\!\left(1 + \frac{x}{n\pi}\right) = 1 - \frac{x^2}{n^2\pi^2}
+\]</div>
+<p>이므로, infinite product는 다음과 같이 단순화된다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\sin x = x \prod_{n=1}^{\infty}\left(1 - \frac{x^2}{n^2\pi^2}\right)
+\end{equation}
+\]</div>
+<p>양변을 <span class="math notranslate nohighlight">\(x\)</span>로 나누면,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{\sin x}{x} = \prod_{n=1}^{\infty}\left(1 - \frac{x^2}{n^2\pi^2}\right)
+= \left(1 - \frac{x^2}{\pi^2}\right)
+\!\left(1 - \frac{x^2}{4\pi^2}\right)
+\!\left(1 - \frac{x^2}{9\pi^2}\right) \cdots
+\end{equation}
+\]</div>
+<p>이 infinite product를 Desmos 등의 도구로 유한 항까지 계산하면 <span class="math notranslate nohighlight">\(\sin x\)</span>의 그래프와 매우 잘 일치함을 확인할 수 있으며, 항의 수를 늘릴수록 수렴이 개선된다.</p>
+<p><img alt="Sine product formula 유한 항 근사와 sin x의 비교" src="../../_images/fig-001-003.png" /></p>
+<p><strong>Figure 3. Sine product formula 유한 항 근사와 <span class="math notranslate nohighlight">\(\sin x\)</span>의 비교</strong></p>
+<p>Sine product formula의 유한 항 근사</p>
+<div class="math notranslate nohighlight">
+\[
+P_N(x) = x \prod_{n=1}^{N}\left(1 - \frac{x^2}{n^2\pi^2}\right)
+\]</div>
+<p>와 <span class="math notranslate nohighlight">\(\sin x\)</span>를 겹쳐 나타낸 그래프이다. <span class="math notranslate nohighlight">\(N\)</span>이 작을 때에는 근사가 <span class="math notranslate nohighlight">\(\sin x\)</span>와
+크게 벗어나지만, <span class="math notranslate nohighlight">\(N\)</span>이 증가함에 따라 <span class="math notranslate nohighlight">\(P_N(x)\)</span>가 <span class="math notranslate nohighlight">\(\sin x\)</span>에 점점 가까워짐을
+확인할 수 있다. 이는 Euler의 infinite product factorization이 수치적으로
+타당함을 시각적으로 뒷받침하는 근거이다. 단, 이 수렴성의 엄밀한 정당화는
+Euler의 시대에는 이루어지지 않았으며, Weierstrass Factorization Theorem
+(1870년대)에 의해 사후적으로 증명되었다. 그래프에서 <span class="math notranslate nohighlight">\(\sin x\)</span>의 zeros인
+<span class="math notranslate nohighlight">\(x = \pm\pi, \pm 2\pi, \ldots\)</span>에서 <span class="math notranslate nohighlight">\(P_N(x)\)</span>도 정확히 zero가 됨을 확인할 수
+있는데, 이는 product formula의 구성 방식에서 직접 보장되는 성질이다.</p>
+<blockquote>
+<div><p><strong>주의</strong>: 이 단계는 Euler의 원래 증명에서 엄밀하지 않은 부분이다. 유한한 경우에 성립하는 factorization을 무한한 경우로 직접 확장하는 것은 일반적으로 정당화되지 않는다. 이 단계는 약 100년 후, Weierstrass(1870년대)가 analytic function에 대한 <strong>Weierstrass Factorization Theorem</strong>을 증명함으로써 사후적으로 엄밀하게 정당화되었다.</p>
+</div></blockquote>
+</section>
+<section id="step-5-x-2">
+<h3>Step 5. <span class="math notranslate nohighlight">\(x^2\)</span> 계수 비교<a class="headerlink" href="#step-5-x-2" title="Link to this heading">#</a></h3>
+<p>Sine product formula의 infinite product를 전개할 때, 상수항은 모든 인수에서 1을 선택함으로써 얻어지고 그 값은 1이다. <span class="math notranslate nohighlight">\(x\)</span> 항은 존재하지 않는데, 이는 모든 인수가 <span class="math notranslate nohighlight">\(x^2\)</span>의 배수를 포함하므로 어떤 조합으로 선택하더라도 <span class="math notranslate nohighlight">\(x^1\)</span>의 항을 만들 수 없기 때문이다. 따라서 <span class="math notranslate nohighlight">\(x^2\)</span> 항을 구하려면, 하나의 인수에서 <span class="math notranslate nohighlight">\(-x^2/(n^2\pi^2)\)</span> 항을 선택하고 나머지 모든 인수에서 1을 선택하는 경우만 기여한다. 이를 정리하면,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\frac{\sin x}{x}
+&amp;= 1 - \left(\frac{1}{\pi^2} + \frac{1}{4\pi^2} + \frac{1}{9\pi^2} + \cdots\right) x^2 + \cdots \\
+&amp;= 1 - \frac{1}{\pi^2}\!\left(1 + \frac{1}{4} + \frac{1}{9} + \cdots\right) x^2 + \cdots \\
+&amp;= 1 - \frac{\zeta(2)}{\pi^2}\, x^2 + \cdots
+\end{align*}
+\end{split}\]</div>
+</section>
+<section id="step-6">
+<h3>Step 6. 결론<a class="headerlink" href="#step-6" title="Link to this heading">#</a></h3>
+<p>Step 1의 Taylor series와 Step 5의 product formula 전개 결과에서 <span class="math notranslate nohighlight">\(x^2\)</span>의 계수를 등치시키면,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+-\frac{1}{3!} = -\frac{\zeta(2)}{\pi^2}
+\quad \Longrightarrow \quad
+\frac{\zeta(2)}{\pi^2} = \frac{1}{6}
+\end{align*}
+\]</div>
+<p>이로부터 Basel problem의 해가 도출된다.</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\zeta(2) = \frac{\pi^2}{6}
+\end{equation}
+\]</div>
+<p>Euler의 실제 논문에서는 이보다 일반화된 방법이 사용되었으며, 각주를 통해 <span class="math notranslate nohighlight">\(\zeta(2)\)</span>만을 구하는 더 간결한 방법이 존재함을 언급하고 있다. 위에 서술된 증명은 아마도 Euler가 최초로 발견한 방법에 가까운 것으로 추정된다.</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="summary">
+<h2>8. Summary<a class="headerlink" href="#summary" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Riemann zeta function <span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 complex function으로, <span class="math notranslate nohighlight">\(\operatorname{Re}(s) &gt; 1\)</span>에서 infinite series <span class="math notranslate nohighlight">\(\zeta(s) = \sum_{n=1}^{\infty} 1/n^s\)</span>로 정의되며, analytic continuation을 통해 <span class="math notranslate nohighlight">\(s \neq 1\)</span>인 모든 복소수로 확장된다.</p></li>
+<li><p><span class="math notranslate nohighlight">\(s = 1\)</span>은 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 유일한 pole이다. <span class="math notranslate nohighlight">\(s \leq 1\)</span>인 실수에 대해서는 급수가 발산한다.</p></li>
+<li><p>Zeros는 <strong>trivial zeros</strong>(음의 짝수 정수)와 critical strip <span class="math notranslate nohighlight">\(0 &lt; \operatorname{Re}(s) &lt; 1\)</span> 내부에 무한히 존재하는 <strong>nontrivial zeros</strong>로 구분된다.</p></li>
+<li><p><strong>Riemann hypothesis</strong>(1859)는 모든 nontrivial zeros가 critical line <span class="math notranslate nohighlight">\(\operatorname{Re}(s) = 1/2\)</span> 위에 놓인다고 주장하는 미해결 conjecture이다. 증명 또는 반례 발견에 $1,000,000달러의 상금이 걸려 있다.</p></li>
+<li><p><strong>Basel problem</strong> <span class="math notranslate nohighlight">\(\zeta(2) = \pi^2/6\)</span>은 Mengoli(1650)가 제기하고 Euler(1734–5)가 해결하였다.</p></li>
+<li><p>Euler는 먼저 <strong>Euler-Maclaurin summation</strong>으로 20자리 정확도의 수치를 얻어 <span class="math notranslate nohighlight">\(\pi^2/6\)</span>임을 추측한 후, <span class="math notranslate nohighlight">\(\sin x / x\)</span>의 Taylor series와 sine product formula의 <span class="math notranslate nohighlight">\(x^2\)</span> 계수를 비교하는 방법으로 이를 증명하였다.</p></li>
+<li><p>증명의 핵심 단계인 infinite product factorization은 <strong>Weierstrass Factorization Theorem</strong>(1870년대)에 의해 사후적으로 엄밀하게 정당화되었다.</p></li>
+</ul>
+</section>
+<hr class="docutils" />
+<section id="review-questions">
+<h2>9. Review Questions<a class="headerlink" href="#review-questions" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Riemann zeta function <span class="math notranslate nohighlight">\(\zeta(s)\)</span>는 실수 범위에서 어떤 조건 하에 수렴하는가? 그 이유를 설명하라.</p></li>
+<li><p>Trivial zeros와 nontrivial zeros를 각각 정의하고, 그 차이를 설명하라.</p></li>
+<li><p>Critical strip과 critical line을 각각 수식으로 정의하라.</p></li>
+<li><p>Riemann hypothesis는 무엇을 주장하는가? 이것이 단순히 “zeros가 critical strip 안에 있다”는 것보다 강한 이유를 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(s \leq 1\)</span>인 경우 <span class="math notranslate nohighlight">\(\zeta(s)\)</span>의 급수 정의가 발산함을 comparison test를 이용하여 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sum_{n=1}^{N} 1/n^2\)</span>의 수렴 속도가 느린 이유를 설명하고, Euler가 이를 극복한 방법을 서술하라.</p></li>
+<li><p>Euler의 sine product formula 유도 과정에서 엄밀하지 않은 부분은 어디인가? 이것이 어떻게 정당화되었는가?</p></li>
+<li><p>Sine product formula의 전개에서 <span class="math notranslate nohighlight">\(x^2\)</span> 계수를 구할 때, <span class="math notranslate nohighlight">\(x\)</span> 항이 존재하지 않는 이유를 설명하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\sin x / x\)</span>의 Taylor series와 sine product formula의 <span class="math notranslate nohighlight">\(x^2\)</span> 계수를 비교하여 <span class="math notranslate nohighlight">\(\zeta(2) = \pi^2/6\)</span>을 도출하라.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\zeta(-1) = -1/12\)</span>의 의미를 analytic continuation의 관점에서 설명하라.</p></li>
+</ol>
+</section>
+<div class="toctree-wrapper compound">
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./contents/lec-001"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="../../intro.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title">Introduction</p>
+      </div>
+    </a>
+    <a class="right-next"
+       href="lec-001_figures.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title">Figures</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <dialog id="pst-secondary-sidebar-modal"></dialog>
+                <div id="pst-secondary-sidebar" class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item"><div
+    id="pst-page-navigation-heading-2"
+    class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav id="pst-page-toc-nav" class="page-toc" aria-labelledby="pst-page-navigation-heading-2">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#zeta-in-the-complex-plane">1. Zeta in the Complex Plane</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#zeros">Zeros의 분류</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#riemann-hypothesis-1859">Riemann Hypothesis (1859)</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#scope-of-this-series">2. Scope of This Series</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#prerequisites">3. Prerequisites</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-zeta-function">4. The Zeta Function</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id1">특수값</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-continuation-zeta-1">Analytic continuation과 <span class="math notranslate nohighlight">\(\zeta(-1)\)</span></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#the-basel-problem">5. The Basel Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#id2">역사적 배경</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numerical-approximation">6. Numerical Approximation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#euler-s-proof-of-the-basel-problem">7. Euler’s Proof of the Basel Problem</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-1-taylor-series-of-sin-x">Step 1. Taylor Series of <span class="math notranslate nohighlight">\(\sin x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-2-zeros-of-sin-x">Step 2. Zeros of <span class="math notranslate nohighlight">\(\sin x\)</span></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-3-factorization-analogy">Step 3. Factorization Analogy (유한한 경우)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-4-sine-product-formula-euler-s-factorization">Step 4. Sine Product Formula (Euler’s factorization)</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-5-x-2">Step 5. <span class="math notranslate nohighlight">\(x^2\)</span> 계수 비교</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#step-6">Step 6. 결론</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#summary">8. Summary</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#review-questions">9. Review Questions</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By nyx7zen
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2026.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script defer src="../../_static/scripts/bootstrap.js?digest=8878045cc6db502f8baf"></script>
+<script defer src="../../_static/scripts/pydata-sphinx-theme.js?digest=8878045cc6db502f8baf"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
