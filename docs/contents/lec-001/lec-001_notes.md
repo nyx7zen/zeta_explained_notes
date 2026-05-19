@@ -4,7 +4,7 @@
 > $\zeta(2) = \pi^2/6$을 Euler의 sine product formula를 이용하여 증명한다.
 
 - **Source**: [Zeta Explained #01](https://youtu.be/RMFt-9PzF54)
-- **Reference**: *The Riemann Zeta-Function* by Aleksandar Ivić (1985)
+- **Reference**: *The Riemann Zeta-Function* by Aleksandar Ivić (John Wiley & Sons, 1985)
 
 **Overview**
 

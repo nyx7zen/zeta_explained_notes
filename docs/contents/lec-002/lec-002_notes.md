@@ -5,7 +5,7 @@
 > 수렴성과 $|\zeta(s)|$의 상한을 triangle inequality로 도출한다.
 
 - **Source**: [Zeta Explained #02](https://youtu.be/c0GFNjERKxY?si=Iw5UJmtmfeV0WBQG)
-- **Reference**: *The Riemann Zeta Function: Theory and Applications* by Aleksandar Ivić (1985)
+- **Reference**: *The Riemann Zeta-Function* by Aleksandar Ivić (John Wiley & Sons, 1985)
 
 **Overview**
 
