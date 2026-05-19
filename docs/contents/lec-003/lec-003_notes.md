@@ -1,4 +1,4 @@
-# #03 Analytic Properties of Zeta
+# 3. Analytic Properties of Zeta
 
 > $\operatorname{Re}(s) > 1$에서 $\zeta(s)$의 partial sums가
 > $\operatorname{Re}(s) \geq 1 + a$인 영역에서 uniformly convergent함을

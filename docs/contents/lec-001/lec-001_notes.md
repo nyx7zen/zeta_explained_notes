@@ -1,4 +1,4 @@
-# #01 Intro and the Basel Problem
+# 1. Intro and the Basel Problem
 
 > Riemann zeta function의 기본 성질을 소개하고, Basel problem
 > $\zeta(2) = \pi^2/6$을 Euler의 sine product formula를 이용하여 증명한다.

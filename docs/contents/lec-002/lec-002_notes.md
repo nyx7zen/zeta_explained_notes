@@ -1,4 +1,4 @@
-# #02 Zeta in the Complex Plane
+# 2. Zeta in the Complex Plane
 
 > Integral test를 이용하여 $\zeta(s)$가 실수 $s > 1$에서 수렴함을
 > 증명하고, 이를 복소수 $s$로 확장하여 $\operatorname{Re}(s) > 1$인 영역에서의
