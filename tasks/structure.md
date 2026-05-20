@@ -20,7 +20,6 @@ zeta_explained_notes/
 │   ├── _config.yml
 │   ├── _toc.yml
 │   ├── intro.md
-│   ├── lecture_list.md
 │   ├── references.bib
 │   ├── _static/
 │   │   └── custom.css

@@ -3,7 +3,7 @@
 # ============================================================
 
 format: jb-book
-root  : intro
+root: intro
 
 parts:
   # ----------------------------------------------------------
@@ -12,7 +12,7 @@ parts:
   - caption: "Ch 1. 제타 함수의 기초와 오일러 곱"
     chapters:
       - file: contents/lec-001/lec-001_notes
-        title: "1. 서론 및 바젤 문제"
+        title: "1. 인트로 및 바젤 문제"
         sections:
           - file: contents/lec-001/lec-001_figures
       - file: contents/lec-002/lec-002_notes
@@ -20,182 +20,366 @@ parts:
         sections:
           - file: contents/lec-002/lec-002_figures
       - file: contents/lec-003/lec-003_notes
-        title: "3. 제타의 해석적 성질"
+        title: "3. 제타 함수의 해석적 성질"
         sections:
           - file: contents/lec-003/lec-003_figures
-      - file: contents/lec-004/lec-004_notes
-        title: "4. 오일러 곱 공식의 유도"
-        sections:
-          - file: contents/lec-004/lec-004_figures
-      - file: contents/lec-005/lec-005_notes
-        title: "5. 소수의 무한성과 제타 함수"
-      # - file: contents/lec-006/lec-006_notes
-      #   title: "6. 디리클레 에타 함수와 교대급수"
-      # - file: contents/lec-007/lec-007_notes
-      #   title: "7. 체바로프 정리와 소수 분포"
-      # - file: contents/lec-008/lec-008_notes
-      #   title: "8. 산술 함수와 디리클레 합성곱"
-      # - file: contents/lec-009/lec-009_notes
-      #   title: "9. 뫼비우스 반전 공식"
-      # - file: contents/lec-010/lec-010_notes
-      #   title: "10. 디리클레 급수의 수렴 영역"
-      # - file: contents/lec-011/lec-011_notes
-      #   title: "11. 아벨 합 공식"
-      # - file: contents/lec-012/lec-012_notes
-      #   title: "12. 오일러-맥로린 합 공식"
-      # - file: contents/lec-013/lec-013_notes
-      #   title: "13. 제타 함수의 초기 수치적 성질"
+  #     - file: contents/lec-004/lec-004_notes
+  #       title: "4. 오일러 곱 공식"
+  #       sections:
+  #         - file: contents/lec-004/lec-004_figures
+  #     - file: contents/lec-005/lec-005_notes
+  #       title: "5. 실수부가 1보다 큰 영역에서 제타 함수의 영점이 존재하지 않는다는 증명"
+  #       sections:
+  #         - file: contents/lec-005/lec-005_figures
+  #     - file: contents/lec-006/lec-006_notes
+  #       title: "6. 로그 미분과 폰 만골트 함수"
+  #       sections:
+  #         - file: contents/lec-006/lec-006_figures
 
-  # ----------------------------------------------------------
-  # Chapter 2. 해석적 확장과 함수 방정식
-  # ----------------------------------------------------------
-  # - caption: "Ch 2. 해석적 확장과 함수 방정식"
+  # # ----------------------------------------------------------
+  # # Chapter 2. 해석적 연속과 기초 도구들
+  # # ----------------------------------------------------------
+  # - caption: "Ch 2. 해석적 연속과 기초 도구들"
   #   chapters:
-      # - file: contents/lec-014/lec-014_notes
-      #   title: "14. 감마 함수의 정의와 성질"
-      # - file: contents/lec-015/lec-015_notes
-      #   title: "15. 제타 함수의 해석적 확장: 첫 번째 접근"
-      # - file: contents/lec-016/lec-016_notes
-      #   title: "16. 야코비 테타 함수와 푸리에 변환"
-      # - file: contents/lec-017/lec-017_notes
-      #   title: "17. 리만의 함수 방정식 증명"
-      # - file: contents/lec-018/lec-018_notes
-      #   title: "18. 자명한 영점과 특이점"
-      # - file: contents/lec-019/lec-019_notes
-      #   title: "19. 임계 영역과 복소 적분"
-      # - file: contents/lec-020/lec-020_notes
-      #   title: "20. 로그 도함수와 영점의 개수"
-      # - file: contents/lec-021/lec-021_notes
-      #   title: "21. 리만-폰 망골트 공식"
-      # - file: contents/lec-022/lec-022_notes
-      #   title: "22. 제타 함수의 증가율 추정"
+  #     - file: contents/lec-007/lec-007_notes
+  #       title: "7. 해석적 연속 입문"
+  #       sections:
+  #         - file: contents/lec-007/lec-007_figures
+  #     - file: contents/lec-008/lec-008_notes
+  #       title: "8. 디리클레 에타 함수"
+  #       sections:
+  #         - file: contents/lec-008/lec-008_figures
+  #     - file: contents/lec-009/lec-009_notes
+  #       title: "9. 리만-스틸티어스 적분"
+  #       sections:
+  #         - file: contents/lec-009/lec-009_figures
+  #     - file: contents/lec-010/lec-010_notes
+  #       title: "10. 오일러-맥로린 합 공식"
+  #       sections:
+  #         - file: contents/lec-010/lec-010_figures
+  #     - file: contents/lec-011/lec-011_notes
+  #       title: "11. s=1에서 제타 함수의 로랑 급수"
+  #       sections:
+  #         - file: contents/lec-011/lec-011_figures
+  #     - file: contents/lec-012/lec-012_notes
+  #       title: "12. 짝수 정수에서 제타 함수의 명시적 공식"
+  #       sections:
+  #         - file: contents/lec-012/lec-012_figures
+  #     - file: contents/lec-013/lec-013_notes
+  #       title: "13. 실수부가 1인 직선 위에서 제타 함수의 영점이 존재하지 않는다는 증명"
+  #       sections:
+  #         - file: contents/lec-013/lec-013_figures
 
-  # ----------------------------------------------------------
-  # Chapter 3. 소수 정리와 가설의 도구들
-  # ----------------------------------------------------------
-  # - caption: "Ch 3. 소수 정리와 가설의 도구들"
+  # # ----------------------------------------------------------
+  # # Chapter 3. 감마 함수와 리만의 함수 방정식
+  # # ----------------------------------------------------------
+  # - caption: "Ch 3. 감마 함수와 리만의 함수 방정식"
   #   chapters:
-      # - file: contents/lec-023/lec-023_notes
-      #   title: "23. 폰 망골트 함수와 프사이 함수"
-      # - file: contents/lec-024/lec-024_notes
-      #   title: "24. 체바로프 함수의 해석적 표현"
-      # - file: contents/lec-025/lec-025_notes
-      #   title: "25. 페론의 공식"
-      # - file: contents/lec-026/lec-026_notes
-      #   title: "26. ζ(1+it) ≠ 0 증명"
-      # - file: contents/lec-027/lec-027_notes
-      #   title: "27. 소수 정리의 완전한 증명"
-      # - file: contents/lec-028/lec-028_notes
-      #   title: "28. 오차항 추정과 영점 영역"
-      # - file: contents/lec-029/lec-029_notes
-      #   title: "29. 하디의 Z-함수와 실영점"
-      # - file: contents/lec-030/lec-030_notes
-      #   title: "30. 그람의 법칙과 영점의 위치"
-      # - file: contents/lec-031/lec-031_notes
-      #   title: "31. 디리클레 L-함수와 등차수열의 소수"
-      # - file: contents/lec-032/lec-032_notes
-      #   title: "32. 메르텐스 추측의 구조"
-      # - file: contents/lec-033/lec-033_notes
-      #   title: "33. 오들리즈코-테 리엘 시각화"
-      # - file: contents/lec-034/lec-034_notes
-      #   title: "34. 린델뢰프 가설 소개"
-      # - file: contents/lec-035/lec-035_notes
-      #   title: "35. 대대적 평균값 정리"
-      # - file: contents/lec-036/lec-036_notes
-      #   title: "36. 보어-란다우 정리"
-      # - file: contents/lec-037/lec-037_notes
-      #   title: "37. 에르되스-셀베르그의 초등적 증명 개요"
-      # - file: contents/lec-038/lec-038_notes
-      #   title: "38. 리만 가설과 동치인 명제들"
+  #     - file: contents/lec-014/lec-014_notes
+  #       title: "14. 감마 함수 입문"
+  #       sections:
+  #         - file: contents/lec-014/lec-014_figures
+  #     - file: contents/lec-015/lec-015_notes
+  #       title: "15. 제타 함수의 두 값 ζ(s)와 ζ(1-s)를 연결하는 리만의 함수 방정식"
+  #       sections:
+  #         - file: contents/lec-015/lec-015_figures
+  #     - file: contents/lec-016/lec-016_notes
+  #       title: "16. 리만 함수 방정식의 증명"
+  #       sections:
+  #         - file: contents/lec-016/lec-016_figures
+  #     - file: contents/lec-017/lec-017_notes
+  #       title: "17. 리만의 크시(ξ) 함수"
+  #       sections:
+  #         - file: contents/lec-017/lec-017_figures
+  #     - file: contents/lec-039/lec-039_notes
+  #       title: "39. 제타 함수에 대한 리만의 전역 방정식"
+  #       sections:
+  #         - file: contents/lec-039/lec-039_figures
+  #     - file: contents/lec-040/lec-040_notes
+  #       title: "40. 리만의 함수 방정식 증명"
+  #       sections:
+  #         - file: contents/lec-040/lec-040_figures
+  #     - file: contents/lec-041/lec-041_notes
+  #       title: "41. 야코비 테타 함수를 이용한 리만의 함수 방정식 두 번째 증명"
+  #       sections:
+  #         - file: contents/lec-041/lec-041_figures
+  #     - file: contents/lec-042/lec-042_notes
+  #       title: "42. 리만의 크시(ξ) 함수와 리만 가설의 기원"
+  #       sections:
+  #         - file: contents/lec-042/lec-042_figures
+  #     - file: contents/lec-046/lec-046_notes
+  #       title: "46. 0에서의 제타 함수 값"
+  #       sections:
+  #         - file: contents/lec-046/lec-046_figures
 
-  # ----------------------------------------------------------
-  # Chapter 4. 리만의 명시적 공식과 계산 수학
-  # ----------------------------------------------------------
-  # - caption: "Ch 4. 리만의 명시적 공식과 계산 수학"
+  # # ----------------------------------------------------------
+  # # Chapter 4. 임계 영역과 제타 함수의 영점 분포
+  # # ----------------------------------------------------------
+  # - caption: "Ch 4. 임계 영역과 제타 함수의 영점 분포"
   #   chapters:
-      # - file: contents/lec-039/lec-039_notes
-      #   title: "39. 리만의 1859년 기념비적 논문 분석"
-      # - file: contents/lec-040/lec-040_notes
-      #   title: "40. 소수의 파동: 영점이 만드는 소수 분포"
-      # - file: contents/lec-041/lec-041_notes
-      #   title: "41. 리만의 명시적 공식 유도"
-      # - file: contents/lec-042/lec-042_notes
-      #   title: "42. 소수 계량 함수의 무한 급수 표현"
-      # - file: contents/lec-043/lec-043_notes
-      #   title: "43. 가우스를 넘어선 리만의 근사식"
-      # - file: contents/lec-044/lec-044_notes
-      #   title: "44. 제타 함수의 영점 계산 역사"
-      # - file: contents/lec-045/lec-045_notes
-      #   title: "45. 오일러-맥로린을 이용한 영점 탐색"
-      # - file: contents/lec-046/lec-046_notes
-      #   title: "46. 리만-시겔 공식의 유도"
-      # - file: contents/lec-047/lec-047_notes
-      #   title: "47. 코시 잔여 정리를 이용한 수치 적분"
-      # - file: contents/lec-048/lec-048_notes
-      #   title: "48. 튜링의 방법과 영점의 무한성 증명"
-      # - file: contents/lec-049/lec-049_notes
-      #   title: "49. 고성능 제타 함수 알고리즘"
-      # - file: contents/lec-050/lec-050_notes
-      #   title: "50. 파이썬을 이용한 하디 Z-함수 시각화"
-      # - file: contents/lec-051/lec-051_notes
-      #   title: "51. 임계선 위 최초 100개 영점의 수치해석"
-      # - file: contents/lec-052/lec-052_notes
-      #   title: "52. 란다우-지겔 영점 문제"
-      # - file: contents/lec-053/lec-053_notes
-      #   title: "53. 밀도 추정 정리"
-      # - file: contents/lec-054/lec-054_notes
-      #   title: "54. 셀베르그 트레이스 공식의 맛보기"
-      # - file: contents/lec-055/lec-055_notes
-      #   title: "55. 영점 간격 분포와 무작위 행렬 이론"
-      # - file: contents/lec-056/lec-056_notes
-      #   title: "56. 몽고메리의 한 쌍 상관관계 추측"
-      # - file: contents/lec-057/lec-057_notes
-      #   title: "57. 다이슨의 관측과 양자 역학적 연결고리"
-      # - file: contents/lec-058/lec-058_notes
-      #   title: "58. 수치적 반례와 가설의 신뢰도 평가"
-      # - file: contents/lec-059/lec-059_notes
-      #   title: "59. 베일 추측과 유한체 위의 제타"
-      # - file: contents/lec-060/lec-060_notes
-      #   title: "60. 하스-베일 제타 함수"
-      # - file: contents/lec-061/lec-061_notes
-      #   title: "61. 타원곡선과 BSD 추측의 연결"
-      # - file: contents/lec-062/lec-062_notes
-      #   title: "62. 모듈러 형식과 L-함수"
-      # - file: contents/lec-063/lec-063_notes
-      #   title: "63. 랭글랜즈 프로그램 개요"
-      # - file: contents/lec-064/lec-064_notes
-      #   title: "64. p-진수 제타 함수"
-      # - file: contents/lec-065/lec-065_notes
-      #   title: "65. 아르틴 L-함수"
-      # - file: contents/lec-066/lec-066_notes
-      #   title: "66. 모티빅 L-함수의 세계"
-      # - file: contents/lec-067/lec-067_notes
-      #   title: "67. 이와사와 이론 맛보기"
-      # - file: contents/lec-068/lec-068_notes
-      #   title: "68. 제타 정규화와 물리학적 응용"
+  #     - file: contents/lec-018/lec-018_notes
+  #       title: "18. 복소함수의 증가율 (영점이 많을수록 증가 속도가 빠르다)"
+  #       sections:
+  #         - file: contents/lec-018/lec-018_figures
+  #     - file: contents/lec-019/lec-019_notes
+  #       title: "19. 임계 영역 내부의 영점 개수가 O(T log T)임을 증명"
+  #       sections:
+  #         - file: contents/lec-019/lec-019_figures
+  #     - file: contents/lec-020/lec-020_notes
+  #       title: "20. 제타 함수의 아다마르 인수분해"
+  #       sections:
+  #         - file: contents/lec-020/lec-020_figures
+  #     - file: contents/lec-021/lec-021_notes
+  #       title: "21. 제타 함수 영점의 개수를 세는 리만-폰 만골트 공식"
+  #       sections:
+  #         - file: contents/lec-021/lec-021_figures
+  #     - file: contents/lec-022/lec-022_notes
+  #       title: "22. 임계 영역 내부의 고전적 영점 배제 영역"
+  #       sections:
+  #         - file: contents/lec-022/lec-022_figures
+  #     - file: contents/lec-053/lec-053_notes
+  #       title: "53. 제타 함수 영점 사이의 간격 (12 이하)"
+  #       sections:
+  #         - file: contents/lec-053/lec-053_figures
+  #     - file: contents/lec-054/lec-054_notes
+  #       title: "54. 제타 함수 영점 간격에 대한 리틀우드의 Log Log Log 상한선"
+  #       sections:
+  #         - file: contents/lec-054/lec-054_figures
+  #     - file: contents/lec-055/lec-055_notes
+  #       title: "55. 오차 함수 S(T)와 리만-폰 만골트 공식의 정확도"
+  #       sections:
+  #         - file: contents/lec-055/lec-055_figures
+  #     - file: contents/lec-056/lec-056_notes
+  #       title: "56. 소수 파동의 발산합으로 표현되는 S(T)"
+  #       sections:
+  #         - file: contents/lec-056/lec-056_figures
 
-  # ----------------------------------------------------------
-  # Chapter 5. 심화 해석 기법 및 고전 정수론의 확장
-  # ----------------------------------------------------------
-  # - caption: "Ch 5. 심화 해석 기법 및 고전 정수론의 확장"
+  # # ----------------------------------------------------------
+  # # Chapter 5. 소수 정리와 명시적 공식
+  # # ----------------------------------------------------------
+  # - caption: "Ch 5. 소수 정리와 명시적 공식"
   #   chapters:
-      # - file: contents/lec-069/lec-069_notes
-      #   title: "69. 안점법을 이용한 점근적 분석"
-      # - file: contents/lec-070/lec-070_notes
-      #   title: "70. 스털링 근사의 정교화"
-      # - file: contents/lec-071/lec-071_notes
-      #   title: "71. 하디-티치마슈의 평균값 정리 증명"
-      # - file: contents/lec-072/lec-072_notes
-      #   title: "72. 빌라트의 적분 표현식"
-      # - file: contents/lec-073/lec-073_notes
-      #   title: "73. 오일러 토션트 함수의 디리클레 급수 성질"
-      # - file: contents/lec-074/lec-074_notes
-      #   title: "74. 약수 함수와 라마누잔 합"
-      # - file: contents/lec-075/lec-075_notes
-      #   title: "75. 제곱수가 없는 수의 밀도 분석"
-      # - file: contents/lec-076/lec-076_notes
-      #   title: "76. 에르되스-카츠 정리와의 연계"
-      # - file: contents/lec-077/lec-077_notes
-      #   title: "77. 제타 함수의 보편성 정리"
-      # - file: contents/lec-078/lec-078_notes
-      #   title: "78. 요약 및 현대 해석적 정수론의 미해결 과제들"
+  #     - file: contents/lec-027/lec-027_notes
+  #       title: "27. 소수 정리 (1부)"
+  #       sections:
+  #         - file: contents/lec-027/lec-027_figures
+  #     - file: contents/lec-028/lec-028_notes
+  #       title: "28. 소수 정리 (2부)"
+  #       sections:
+  #         - file: contents/lec-028/lec-028_figures
+  #     - file: contents/lec-043/lec-043_notes
+  #       title: "43. 제타 함수와 소수 사이의 리만적 연결 고리"
+  #       sections:
+  #         - file: contents/lec-043/lec-043_figures
+  #     - file: contents/lec-044/lec-044_notes
+  #       title: "44. 파동으로 표현되는 소수"
+  #       sections:
+  #         - file: contents/lec-044/lec-044_figures
+  #     - file: contents/lec-045/lec-045_notes
+  #       title: "45. 체비쇼프 ψ(x) 함수에 대한 폰 만골트의 명시적 공식"
+  #       sections:
+  #         - file: contents/lec-045/lec-045_figures
+  #     - file: contents/lec-047/lec-047_notes
+  #       title: "47. 체비쇼프 ψ(x) 함수에 대한 절단 명시적 공식"
+  #       sections:
+  #         - file: contents/lec-047/lec-047_figures
+  #     - file: contents/lec-048/lec-048_notes
+  #       title: "48. 소수 정리의 증명"
+  #       sections:
+  #         - file: contents/lec-048/lec-048_figures
+  #     - file: contents/lec-049/lec-049_notes
+  #       title: "49. 소수 정리에 대한 오메가 하한선"
+  #       sections:
+  #         - file: contents/lec-049/lec-049_figures
+  #     - file: contents/lec-050/lec-050_notes
+  #       title: "50. 소수 정리에 대한 리틀우드의 Log Log Log 상한선"
+  #       sections:
+  #         - file: contents/lec-050/lec-050_figures
+  #     - file: contents/lec-051/lec-051_notes
+  #       title: "51. Skewes 수와 가우스의 잘못된 소수 추측"
+  #       sections:
+  #         - file: contents/lec-051/lec-051_figures
+  #     - file: contents/lec-052/lec-052_notes
+  #       title: "52. 소수 간격"
+  #       sections:
+  #         - file: contents/lec-052/lec-052_figures
+  #     - file: contents/lec-057/lec-057_notes
+  #       title: "57. 소수와 제타 함수 영점의 쌍대성"
+  #       sections:
+  #         - file: contents/lec-057/lec-057_figures
+
+  # # ----------------------------------------------------------
+  # # Chapter 6. 리만 가설과 근사 공식들
+  # # ----------------------------------------------------------
+  # - caption: "Ch 6. 리만 가설과 근사 공식들"
+  #   chapters:
+  #     - file: contents/lec-023/lec-023_notes
+  #       title: "23. 지수합 입문"
+  #       sections:
+  #         - file: contents/lec-023/lec-023_figures
+  #     - file: contents/lec-024/lec-024_notes
+  #       title: "24. 제타 함수의 근사 함수 방정식"
+  #       sections:
+  #         - file: contents/lec-024/lec-024_figures
+  #     - file: contents/lec-025/lec-025_notes
+  #       title: "25. 린델뢰프 가설"
+  #       sections:
+  #         - file: contents/lec-025/lec-025_figures
+  #     - file: contents/lec-026/lec-026_notes
+  #       title: "26. 프라그멘-린델뢰프 원리와 임계 영역 내부에서 제타 함수의 차수"
+  #       sections:
+  #         - file: contents/lec-026/lec-026_figures
+  #     - file: contents/lec-029/lec-029_notes
+  #       title: "29. 시각화로 보는 리만 가설"
+  #       sections:
+  #         - file: contents/lec-029/lec-029_figures
+  #     - file: contents/lec-030/lec-030_notes
+  #       title: "30. 리만 가설하에서의 리만-시겔 Z 함수"
+  #       sections:
+  #         - file: contents/lec-030/lec-030_figures
+  #     - file: contents/lec-038/lec-038_notes
+  #       title: "38. 제타 함수의 평균값 정리"
+  #       sections:
+  #         - file: contents/lec-038/lec-038_figures
+
+  # # ----------------------------------------------------------
+  # # Chapter 7. 디리클레 급수와 수론적 함수
+  # # ----------------------------------------------------------
+  # - caption: "Ch 7. 디리클레 급수와 수론적 함수"
+  #   chapters:
+  #     - file: contents/lec-031/lec-031_notes
+  #       title: "31. 디리클레 급수"
+  #       sections:
+  #         - file: contents/lec-031/lec-031_figures
+  #     - file: contents/lec-032/lec-032_notes
+  #       title: "32. 뫼비우스 반전 공식"
+  #       sections:
+  #         - file: contents/lec-032/lec-032_figures
+  #     - file: contents/lec-033/lec-033_notes
+  #       title: "33. 메르텐스 추측 (그리고 리만 가설)"
+  #       sections:
+  #         - file: contents/lec-033/lec-033_figures
+  #     - file: contents/lec-034/lec-034_notes
+  #       title: "34. 메르텐스 추측이 거짓으로 증명된 과정"
+  #       sections:
+  #         - file: contents/lec-034/lec-034_figures
+  #     - file: contents/lec-035/lec-035_notes
+  #       title: "35. 디오판토스 근사"
+  #       sections:
+  #         - file: contents/lec-035/lec-035_figures
+  #     - file: contents/lec-036/lec-036_notes
+  #       title: "36. 실수부가 1 이상인 영역에서의 오메가 결과"
+  #       sections:
+  #         - file: contents/lec-036/lec-036_figures
+  #     - file: contents/lec-037/lec-037_notes
+  #       title: "37. 실수부가 1 이상인 영역에서 제타 함수가 0에 가까워질 수 있는 이유"
+  #       sections:
+  #         - file: contents/lec-037/lec-037_figures
+  #     - file: contents/lec-075/lec-075_notes
+  #       title: "75. 가시 격자 문제"
+  #       sections:
+  #         - file: contents/lec-075/lec-075_figures
+  #     - file: contents/lec-076/lec-076_notes
+  #       title: "76. 오일러 피(φ) 함수와 관련 디리클레 급수"
+  #       sections:
+  #         - file: contents/lec-076/lec-076_figures
+  #     - file: contents/lec-077/lec-077_notes
+  #       title: "77. 제곱 인수가 없는 수와 k제곱 인수가 없는 수"
+  #       sections:
+  #         - file: contents/lec-077/lec-077_figures
+  #     - file: contents/lec-078/lec-078_notes
+  #       title: "78. 거듭제곱수 (소인수의 지수가 모두 2 이상인 수)"
+  #       sections:
+  #         - file: contents/lec-078/lec-078_figures
+  #     - file: contents/lec-079/lec-079_notes
+  #       title: "79. 리우빌 함수"
+  #       sections:
+  #         - file: contents/lec-079/lec-079_figures
+  #     - file: contents/lec-080/lec-080_notes
+  #       title: "80. 폴리아의 (거짓으로 판명된) 추측"
+  #       sections:
+  #         - file: contents/lec-080/lec-080_figures
+  #     - file: contents/lec-081/lec-081_notes
+  #       title: "81. 약수 함수와 디리클레 급수"
+  #       sections:
+  #         - file: contents/lec-081/lec-081_figures
+
+  # # ----------------------------------------------------------
+  # # Chapter 8. 임계선 위의 영점과 수치 계산 방법
+  # # ----------------------------------------------------------
+  # - caption: "Ch 8. 임계선 위의 영점과 수치 계산 방법"
+  #   chapters:
+  #     - file: contents/lec-058/lec-058_notes
+  #       title: "58. 리만-시겔 Z 함수와 테타(θ) 함수"
+  #       sections:
+  #         - file: contents/lec-058/lec-058_figures
+  #     - file: contents/lec-059/lec-059_notes
+  #       title: "59. 그람 점과 그람의 법칙"
+  #       sections:
+  #         - file: contents/lec-059/lec-059_figures
+  #     - file: contents/lec-060/lec-060_notes
+  #       title: "60. 임계선 위에 영점이 무한히 많이 존재한다는 하디의 증명"
+  #       sections:
+  #         - file: contents/lec-060/lec-060_figures
+  #     - file: contents/lec-061/lec-061_notes
+  #       title: "61. 하디-리틀우드의 근사 함수 방정식"
+  #       sections:
+  #         - file: contents/lec-061/lec-061_figures
+  #     - file: contents/lec-062/lec-062_notes
+  #       title: "62. 임계선 위에서의 코사인합"
+  #       sections:
+  #         - file: contents/lec-062/lec-062_figures
+  #     - file: contents/lec-063/lec-063_notes
+  #       title: "63. 리만-시겔 공식"
+  #       sections:
+  #         - file: contents/lec-063/lec-063_figures
+  #     - file: contents/lec-064/lec-064_notes
+  #       title: "64. 제타 함수 계산을 위한 수치해석적 방법"
+  #       sections:
+  #         - file: contents/lec-064/lec-064_figures
+  #     - file: contents/lec-065/lec-065_notes
+  #       title: "65. 계산 예시 및 제타 함수의 영점을 찾는 방법"
+  #       sections:
+  #         - file: contents/lec-065/lec-065_figures
+  #     - file: contents/lec-066/lec-066_notes
+  #       title: "66. 리만 가설에 대한 에드워즈의 고찰"
+  #       sections:
+  #         - file: contents/lec-066/lec-066_figures
+  #     - file: contents/lec-067/lec-067_notes
+  #       title: "67. 리만 가설의 역사적 검증 (1859년~1936년)"
+  #       sections:
+  #         - file: contents/lec-067/lec-067_figures
+  #     - file: contents/lec-068/lec-068_notes
+  #       title: "68. 리만 가설을 검증하는 튜링의 방법 (1953년~현재)"
+  #       sections:
+  #         - file: contents/lec-068/lec-068_figures
+  #     - file: contents/lec-074/lec-074_notes
+  #       title: "74. 임계선 위에 영점이 무한히 많이 존재한다는 티치마르시의 증명"
+  #       sections:
+  #         - file: contents/lec-074/lec-074_figures
+
+  # # ----------------------------------------------------------
+  # # Chapter 9. 감마 함수와 근사 해석법 심화
+  # # ----------------------------------------------------------
+  # - caption: "Ch 9. 감마 함수와 근사 해석법 심화"
+  #   chapters:
+  #     - file: contents/lec-069/lec-069_notes
+  #       title: "69. 감마 함수 심층 탐구 (바이어슈트라스 인수분해 공식)"
+  #       sections:
+  #         - file: contents/lec-069/lec-069_figures
+  #     - file: contents/lec-070/lec-070_notes
+  #       title: "70. 감마 함수 공식들의 증명 (오일러의 반사 공식 및 레장드르의 배각 공식)"
+  #       sections:
+  #         - file: contents/lec-070/lec-070_figures
+  #     - file: contents/lec-071/lec-071_notes
+  #       title: "71. 스털링 근사를 위한 라플라스 방법"
+  #       sections:
+  #         - file: contents/lec-071/lec-071_figures
+  #     - file: contents/lec-072/lec-072_notes
+  #       title: "72. 스털링 근사를 위한 안장점 방법"
+  #       sections:
+  #         - file: contents/lec-072/lec-072_figures
+  #     - file: contents/lec-073/lec-073_notes
+  #       title: "73. 안장점 방법을 통한 리만-시겔 공식 유도"
+  #       sections:
+  #         - file: contents/lec-073/lec-073_figures
