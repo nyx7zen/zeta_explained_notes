@@ -106,16 +106,16 @@ docs/contents/lec-NNN/lec-NNN_notes.md
 
 ## 언어 및 문체 원칙
 
-- 영어 수학 키워드는 번역하지 않고 영어 그대로 유지한다.
-  - 예: analytic continuation, trivial zeros, critical strip, pole, convergence
 - 설명은 한국어로 작성한다.
-- 교과서·논문 스타일: `~한다`, `~이다`, `~하여야 한다`
-- 구어체, 감탄사, 비공식적 표현은 사용하지 않는다.
-- 수식의 의미, 조건, 논리적 역할을 설명한다. 수식을 단순히 읽는 문장은 제외한다.
-- 이모지(emoji)는 절대 사용하지 않는다.
-- 수학 용어의 한국어(영어) 병기는 사용하지 않는다.
-  - 잘못된 예: 적분 판정법(integral test)
-  - 올바른 예: integral test
+- 수학 용어는 한국어로 번역하여 사용한다.
+  - 예: 해석적 연속, 자명한 영점, 임계 띠, 극점, 수렴
+- 다음 고유명사·전문 용어는 영어 표기를 유지한다.
+  - 인명 및 인명이 포함된 정리·함수명: Riemann hypothesis, Euler product,
+    Dirichlet series, Weierstrass factorization, Hardy Z-function 등
+  - 국제적으로 고유명사로 굳어진 개념: Jupyter Book, GitHub, LaTeX 등
+- 처음 등장하는 용어는 한국어(영어) 병기를 허용한다.
+  - 예: 해석적 연속(analytic continuation), 임계 띠(critical strip)
+- 과도한 영어 표기를 최소화하고 부드러운 수학적 서술로 다듬는다.
 
 ---
 
@@ -218,6 +218,7 @@ $$
 | `lec-NNN_notes.md` | `docs/contents/lec-NNN/` |
 | `fig-NNN-YYY.png` | `docs/contents/lec-NNN/images/` |
 | `lec-NNN_figures.ipynb` | `docs/contents/lec-NNN/` |
+| `LECTURE_LIST.yml` | `./` |
 
 `local/` 폴더는 `.gitignore`에 의해 GitHub에 공유되지 않는다.
 
@@ -239,7 +240,8 @@ $$
 
 ## 상세 원칙 참조
 
-더 상세한 원칙은 `docs/_tasks/PROMPT.md`를 참조한다.
+더 상세한 원칙은 `docs/_tasks/guide.md`를 참조한다.
+강의 제목 및 URL은 `./LECTURE_LIST.yml`을 참조한다.
 
 ---
 

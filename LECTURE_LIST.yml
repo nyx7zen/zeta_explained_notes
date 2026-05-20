@@ -1,0 +1,408 @@
+# Zeta Explained Lecture List
+# 챕터 구조는 docs/_toc.yml 에서 관리한다.
+
+lectures:
+  - id: "001"
+    title_ko: "서론 및 바젤 문제"
+    title_en: "Intro and the Basel Problem"
+    url: "https://youtu.be/RMFt-9PzF54"
+
+  - id: "002"
+    title_ko: "복소평면에서의 제타 함수"
+    title_en: "Zeta in the Complex Plane"
+    url: "https://youtu.be/c0GFNjERKxY"
+
+  - id: "003"
+    title_ko: "무한곱과 절대수렴"
+    title_en: "Infinite Products and Absolute Convergence"
+    url: "https://youtu.be/BFHXTkVaQAc"
+
+  - id: "004"
+    title_ko: "오일러 곱 공식의 유도"
+    title_en: "Euler Product Formula"
+    url: "https://youtu.be/Gpdr3_GGzww"
+
+  - id: "005"
+    title_ko: "소수의 무한성과 제타 함수"
+    title_en: "Infinitude of Primes"
+    url: "https://youtu.be/z78NzbhUrWE"
+
+  - id: "006"
+    title_ko: "디리클레 에타 함수와 교대급수"
+    title_en: "Dirichlet Eta Function"
+    url: "https://youtu.be/I0P7DfA17x0"
+
+  - id: "007"
+    title_ko: "체바로프 정리와 소수 분포"
+    title_en: "Chebyshev's Theorem"
+    url: "https://youtu.be/j_AoEw8cj5M"
+
+  - id: "008"
+    title_ko: "산술 함수와 디리클레 합성곱"
+    title_en: "Arithmetic Functions & Dirichlet Convolution"
+    url: "https://youtu.be/q-IXgtm0zKU"
+
+  - id: "009"
+    title_ko: "뫼비우스 반전 공식"
+    title_en: "Möbius Inversion Formula"
+    url: "https://youtu.be/IwH0YELjxnE"
+
+  - id: "010"
+    title_ko: "디리클레 급수의 수렴 영역"
+    title_en: "Convergence of Dirichlet Series"
+    url: "https://youtu.be/tjJz47Ju69M"
+
+  - id: "011"
+    title_ko: "아벨 합 공식"
+    title_en: "Abel's Summation Formula"
+    url: "https://youtu.be/MGHyWwGDcvA"
+
+  - id: "012"
+    title_ko: "오일러-맥로린 합 공식"
+    title_en: "Euler-Maclaurin Summation Formula"
+    url: "https://youtu.be/IVXKHtE8_jQ"
+
+  - id: "013"
+    title_ko: "제타 함수의 초기 수치적 성질"
+    title_en: "Numerical Properties of Zeta"
+    url: "https://youtu.be/nyh7SwKuUtU"
+
+  - id: "014"
+    title_ko: "감마 함수의 정의와 성질"
+    title_en: "The Gamma Function"
+    url: "https://youtu.be/dzC7v2JYfG8"
+
+  - id: "015"
+    title_ko: "제타 함수의 해석적 확장: 첫 번째 접근"
+    title_en: "Analytic Continuation: Part 1"
+    url: "https://youtu.be/9_igjVCo_cw"
+
+  - id: "016"
+    title_ko: "야코비 테타 함수와 푸리에 변환"
+    title_en: "Jacobi Theta Function"
+    url: "https://youtu.be/IHGM7CiLhNE"
+
+  - id: "017"
+    title_ko: "리만의 함수 방정식 증명"
+    title_en: "Riemann's Functional Equation"
+    url: "https://youtu.be/jIwUcFDd630"
+
+  - id: "018"
+    title_ko: "자명한 영점과 특이점"
+    title_en: "Trivial Zeros and Poles"
+    url: "https://youtu.be/w8jtffADyiY"
+
+  - id: "019"
+    title_ko: "임계 영역과 복소 적분"
+    title_en: "The Critical Strip"
+    url: "https://youtu.be/QutY9Gz6wKk"
+
+  - id: "020"
+    title_ko: "로그 도함수와 영점의 개수"
+    title_en: "Logarithmic Derivative"
+    url: "https://youtu.be/ahnXubNjlOo"
+
+  - id: "021"
+    title_ko: "리만-폰 망골트 공식"
+    title_en: "Riemann–von Mangoldt Formula"
+    url: "https://youtu.be/nXVfW927LOk"
+
+  - id: "022"
+    title_ko: "제타 함수의 증가율 추정"
+    title_en: "Growth of the Zeta Function"
+    url: "https://youtu.be/7qo7tN9HoLM"
+
+  - id: "023"
+    title_ko: "폰 망골트 함수와 프사이 함수"
+    title_en: "von Mangoldt Function ψ(x)"
+    url: "https://youtu.be/54maIz-wgoY"
+
+  - id: "024"
+    title_ko: "체바로프 함수의 해석적 표현"
+    title_en: "Analytical Representation of ψ(x)"
+    url: "https://youtu.be/r0NTx7XNDhQ"
+
+  - id: "025"
+    title_ko: "페론의 공식"
+    title_en: "Perron's Inversion Formula"
+    url: "https://youtu.be/RjK3OaFcRhc"
+
+  - id: "026"
+    title_ko: "s=1 선상에서 제타 함수의 비영점 증명"
+    title_en: "ζ(1+it) ≠ 0"
+    url: "https://youtu.be/OcvoIYPL8ic"
+
+  - id: "027"
+    title_ko: "소수 정리의 완전한 증명"
+    title_en: "Proof of the Prime Number Theorem"
+    url: "https://youtu.be/Q2GljCGnfTY"
+
+  - id: "028"
+    title_ko: "오차항 추정과 제타 함수의 영점 영역"
+    title_en: "Error Terms in PNT"
+    url: "https://youtu.be/J0c6sedhnKE"
+
+  - id: "029"
+    title_ko: "하디의 Z-함수와 실영점"
+    title_en: "Hardy's Z-function"
+    url: "https://youtu.be/2qc1_0UUU4M"
+
+  - id: "030"
+    title_ko: "그람의 법칙과 영점의 위치"
+    title_en: "Gram's Law"
+    url: "https://youtu.be/T4Q14zIlXrA"
+
+  - id: "031"
+    title_ko: "디리클레 L-함수와 등차수열의 소수"
+    title_en: "Dirichlet L-functions"
+    url: "https://youtu.be/Q6LGQ_kFm3g"
+
+  - id: "032"
+    title_ko: "메르텐스 추측의 구조"
+    title_en: "Mertens Conjecture"
+    url: "https://youtu.be/S1loSR-0vOA"
+
+  - id: "033"
+    title_ko: "오들리즈코-테 리엘 시각화"
+    title_en: "Odlyzko-te Riele Counterexample"
+    url: "https://youtu.be/AEefcUMjHgA"
+
+  - id: "034"
+    title_ko: "린델뢰프 가설 소개"
+    title_en: "Lindelöf Hypothesis"
+    url: "https://youtu.be/kylDuaMemVc"
+
+  - id: "035"
+    title_ko: "대대적 평균값 정리"
+    title_en: "Mean Value Theorems"
+    url: "https://youtu.be/q2Sq61_h3bA"
+
+  - id: "036"
+    title_ko: "보어-란다우 정리"
+    title_en: "Bohr-Landau Theorem"
+    url: "https://youtu.be/8mdKjNhzs18"
+
+  - id: "037"
+    title_ko: "에르되스-셀베르그의 초등적 증명 개요"
+    title_en: "Elementary Proof of PNT"
+    url: "https://youtu.be/7_0r7YKfGzE"
+
+  - id: "038"
+    title_ko: "리만 가설과 동치인 명제들"
+    title_en: "Equivalences to the Riemann Hypothesis"
+    url: "https://youtu.be/21LtG4aqDwM"
+
+  - id: "039"
+    title_ko: "리만의 1859년 기념비적 논문 분석"
+    title_en: "Riemann's 1859 Paper"
+    url: "https://youtu.be/LjVgOpX47hI"
+
+  - id: "040"
+    title_ko: "소수의 파동: 영점이 만드는 소수 분포"
+    title_en: "Primes as Waves"
+    url: "https://youtu.be/Ca1NzUW-WNk"
+
+  - id: "041"
+    title_ko: "리만의 명시적 공식 유도"
+    title_en: "The Explicit Formula"
+    url: "https://youtu.be/UtbHtiv1reY"
+
+  - id: "042"
+    title_ko: "소수 계량 함수의 무한 급수 표현"
+    title_en: "The Prime Counting Function J(x)"
+    url: "https://youtu.be/smAfvRTfPJY"
+
+  - id: "043"
+    title_ko: "가우스를 넘어선 리만의 근사식"
+    title_en: "Riemann's R(x) Function"
+    url: "https://youtu.be/p_5Q4AVGmSM"
+
+  - id: "044"
+    title_ko: "제타 함수의 영점 계산 역사"
+    title_en: "History of Zero Computations"
+    url: "https://youtu.be/aT0VbxAUwNA"
+
+  - id: "045"
+    title_ko: "오일러-맥로린을 이용한 영점 탐색"
+    title_en: "Euler-Maclaurin Root Finding"
+    url: "https://youtu.be/JvQW3csCheI"
+
+  - id: "046"
+    title_ko: "리만-시겔 공식의 유도"
+    title_en: "Riemann-Siegel Formula"
+    url: "https://youtu.be/1tBeocmw8bE"
+
+  - id: "047"
+    title_ko: "코시 잔여 정리를 이용한 수치 적분"
+    title_en: "Residue Calculus in Computation"
+    url: "https://youtu.be/LlT6T8SVCSg"
+
+  - id: "048"
+    title_ko: "튜링의 방법과 영점의 무한성 증명"
+    title_en: "Turing's Method"
+    url: "https://youtu.be/tam5Gjo5Z5k"
+
+  - id: "049"
+    title_ko: "고성능 제타 함수 알고리즘"
+    title_en: "Odlyzko-Schönhage Algorithm"
+    url: "https://youtu.be/hvnjCudCCL4"
+
+  - id: "050"
+    title_ko: "파이썬을 이용한 하디 Z-함수 시각화"
+    title_en: "Visualizing Hardy's Z-function in Python"
+    url: "https://youtu.be/sqZkSuC260U"
+
+  - id: "051"
+    title_ko: "임계선 위 최초 100개 영점의 수치해석"
+    title_en: "Analyzing First 100 Zeros"
+    url: "https://youtu.be/sxX7znzyNuU"
+
+  - id: "052"
+    title_ko: "란다우-지겔 영점 문제"
+    title_en: "Landau-Siegel Zeros"
+    url: "https://youtu.be/0mxxgdg5RCw"
+
+  - id: "053"
+    title_ko: "밀도 추정 정리"
+    title_en: "Density Estimates"
+    url: "https://youtu.be/w_M4jeJwopc"
+
+  - id: "054"
+    title_ko: "셀베르그 트레이스 공식의 맛보기"
+    title_en: "Intro to Selberg Trace Formula"
+    url: "https://youtu.be/ysU4oa7pasY"
+
+  - id: "055"
+    title_ko: "영점 간격 분포와 무작위 행렬 이론"
+    title_en: "GUE Hypothesis & Random Matrix Theory"
+    url: "https://youtu.be/VHW6xnOo0jI"
+
+  - id: "056"
+    title_ko: "몽고메리의 한 쌍 상관관계 추측"
+    title_en: "Montgomery's Pair Correlation Conjecture"
+    url: "https://youtu.be/UrqpEvEoqDQ"
+
+  - id: "057"
+    title_ko: "다이슨의 관측과 양자 역학적 연결고리"
+    title_en: "Quantum Chaos Connection"
+    url: "https://youtu.be/cXe-UfBeTJg"
+
+  - id: "058"
+    title_ko: "수치적 반례와 가설의 신뢰도 평가"
+    title_en: "Computational Limits and Skeptics"
+    url: "https://youtu.be/vC-TI1XvxWs"
+
+  - id: "059"
+    title_ko: "베일 추측과 유한체 위의 제타"
+    title_en: "Weil Conjectures"
+    url: "https://youtu.be/5TOAPwcFkh0"
+
+  - id: "060"
+    title_ko: "하스-베일 제타 함수"
+    title_en: "Hasse-Weil Zeta Functions"
+    url: "https://youtu.be/uyJ_a55SSuM"
+
+  - id: "061"
+    title_ko: "타원곡선과 BSD 추측의 연결"
+    title_en: "Elliptic Curves & BSD Conjecture"
+    url: "https://youtu.be/PYwUTbNUx-A"
+
+  - id: "062"
+    title_ko: "모듈러 형식과 L-함수"
+    title_en: "Modular Forms"
+    url: "https://youtu.be/xPEF4swlDZE"
+
+  - id: "063"
+    title_ko: "랭글랜즈 프로그램 개요"
+    title_en: "The Langlands Program Overview"
+    url: "https://youtu.be/FtonqlD5YwY"
+
+  - id: "064"
+    title_ko: "p-진수 제타 함수"
+    title_en: "p-adic Zeta Functions"
+    url: "https://youtu.be/4FQUm2YO8yc"
+
+  - id: "065"
+    title_ko: "아르틴 L-함수"
+    title_en: "Artin L-functions"
+    url: "https://youtu.be/nh7_izfGIag"
+
+  - id: "066"
+    title_ko: "모티빅 L-함수의 세계"
+    title_en: "Motivic L-functions"
+    url: "https://youtu.be/ZnKld4XHzsU"
+
+  - id: "067"
+    title_ko: "이와사와 이론 맛보기"
+    title_en: "Introduction to Iwasawa Theory"
+    url: "https://youtu.be/PiFjsk4E8WI"
+
+  - id: "068"
+    title_ko: "제타 정규화와 물리학적 응용"
+    title_en: "Zeta Regularization in Physics"
+    url: "https://youtu.be/gpp4WhsFkHU"
+
+  - id: "069"
+    title_ko: "안점법을 이용한 점근적 분석"
+    title_en: "The Saddle-Point Method"
+    url: "https://youtu.be/8wTpinnmkjc"
+
+  - id: "070"
+    title_ko: "스털링 근사의 정교화"
+    title_en: "Refining Stirling's Approximation"
+    url: "https://youtu.be/anaHsTNiXrw"
+
+  - id: "071"
+    title_ko: "하디-티치마슈의 평균값 정리 증명"
+    title_en: "Hardy-Titchmarsh Theorems"
+    url: "https://youtu.be/GGNSlOqr1cE"
+
+  - id: "072"
+    title_ko: "빌라트의 적분 표현식"
+    title_en: "Vibrat's Integral Representations"
+    url: "https://youtu.be/-jv542wGalY"
+
+  - id: "073"
+    title_ko: "오일러 토션트 함수의 디리클레 급수 성질"
+    title_en: "Euler's Totient Function φ(n)"
+    url: "https://youtu.be/-pNMtT4g37g"
+
+  - id: "074"
+    title_ko: "약수 함수와 라마누잔 합"
+    title_en: "Divisor Functions & Ramanujan Sums"
+    url: "https://youtu.be/t-HSNNz9bGU"
+
+  - id: "075"
+    title_ko: "제곱수가 없는 수의 밀도 분석"
+    title_en: "Density of k-free Numbers"
+    url: "https://youtu.be/DN6YHdTPa2Y"
+
+  - id: "076"
+    title_ko: "에르되스-카츠 정리와의 연계"
+    title_en: "Erdős-Kac Theorem"
+    url: "https://youtu.be/XAIYihWDf0o"
+
+  - id: "077"
+    title_ko: "제타 함수의 보편성 정리"
+    title_en: "Voronin's Universality Theorem"
+    url: "https://youtu.be/XAIYihWDf0o"
+
+  - id: "078"
+    title_ko: "요약 및 현대 해석적 정수론의 미해결 과제들"
+    title_en: "Summary and Future Horizons"
+    url: "https://youtu.be/q_zWKb79MzI"
+
+  - id: "079"
+    title_ko: ""
+    title_en: ""
+    url: "https://youtu.be/qRwFOtVBE0M"
+
+  - id: "080"
+    title_ko: ""
+    title_en: ""
+    url: "https://youtu.be/_CDxgM1u_-M"
+
+  - id: "081"
+    title_ko: ""
+    title_en: ""
+    url: "https://youtu.be/zIrIJHAG9xg"

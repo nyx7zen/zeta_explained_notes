@@ -27,8 +27,8 @@ parts:
         title: "4. 오일러 곱 공식의 유도"
         sections:
           - file: contents/lec-004/lec-004_figures
-      # - file: contents/lec-005/lec-005_notes
-      #   title: "5. 소수의 무한성과 제타 함수"
+      - file: contents/lec-005/lec-005_notes
+        title: "5. 소수의 무한성과 제타 함수"
       # - file: contents/lec-006/lec-006_notes
       #   title: "6. 디리클레 에타 함수와 교대급수"
       # - file: contents/lec-007/lec-007_notes
