@@ -385,7 +385,7 @@ lectures:
   - id: "077"
     title_ko: "제곱 인수가 없는 수와 k제곱 인수가 없는 수"
     title_en: "Square-Free and k-Free Numbers"
-    url: "https://youtu.be/XAIYihWDf0o"
+    url: "https://youtu.be/RlhnlhPt-tA"
 
   - id: "078"
     title_ko: "거듭제곱수 (소인수의 지수가 모두 2 이상인 수)"
@@ -406,3 +406,8 @@ lectures:
     title_ko: "약수 함수와 디리클레 급수"
     title_en: "Divisor Functions and Dirichlet Series"
     url: "https://youtu.be/zIrIJHAG9xg"
+
+  - id: "082"
+    title_ko: "라마누잔의 약수 공식 증명"
+    title_en: "Proof of Ramanujan's Divisor Formula"
+    url: "https://youtu.be/9KZ4F-MlhZs"

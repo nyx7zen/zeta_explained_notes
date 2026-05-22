@@ -78,7 +78,7 @@ docs/contents/lec-NNN/lec-NNN_notes.md
 
 ### 웹 기반 AI 대화창 사용 시 (Claude / Gemini)
 
-`tasks/PROMPT_WEB.md` 전체 내용을 첫 메시지로 붙여넣은 후,
+`tasks/prompt.md` 전체 내용을 첫 메시지로 붙여넣은 후,
 아래 4개 파일을 첨부하고 요청문을 입력한다.
 
 ```

@@ -6,7 +6,12 @@
       "Bash(git commit -m ' *)",
       "Bash(git push *)",
       "Bash(mv \"d:/projects/nyx7zen/zeta_explained_notes/docs/contents/index.md\" \"d:/projects/nyx7zen/zeta_explained_notes/docs/intro.md\")",
-      "Bash(jupyter-book build *)"
+      "Bash(jupyter-book build *)",
+      "Bash(Get-Content \"d:\\\\projects\\\\nyx7zen\\\\zeta_explained_notes\\\\LECTURE_LIST.yml\")",
+      "Bash(Select-Object -First 80)",
+      "WebFetch(domain:www.youtube.com)",
+      "Bash(yt-dlp --flat-playlist --print \"%\\(playlist_index\\)s\\\\t%\\(title\\)s\\\\t%\\(id\\)s\" \"https://www.youtube.com/playlist?list=PLTcPERDxgHxm7TzJ9W92S-l5pGRuhZz10\")",
+      "PowerShell(Rename-Item \"d:\\\\projects\\\\nyx7zen\\\\zeta_explained_notes\\\\lec-001_ocr_claudex.md\" \"lec-001_ocr_tesseract.md\")"
     ],
     "additionalDirectories": [
       "d:\\projects\\nyx7zen\\zeta_explained_notes\\docs\\contents"
